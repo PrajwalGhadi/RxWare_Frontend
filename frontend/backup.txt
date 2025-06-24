@@ -1,0 +1,78 @@
+      <div className="card">
+        <div className="circle">
+          <img src="./src/assets/LogoImg.png" alt="" />
+        </div>
+
+        <div className="details">
+          <h1>
+            Welcome to <span className="logo">RxWare</span>
+          </h1>
+
+          <div className="steps">
+            <div className="singleStep">
+              <h1 className={`${name === "email" ? "active" : ""}`}>1</h1>
+              <p>Email</p>
+            </div>
+            <div className="singleStep">
+              <h1 className={`${name === "otp" ? "active" : ""}`}>2</h1>
+              <p>OTP</p>
+            </div>
+            <div className="singleStep">
+              <h1 className={`${name === "details" ? "active" : ""}`}>3</h1>
+              <p>Details</p>
+            </div>
+            <div className="singleStep">
+              <h1 className={`${name === "domain" ? "active" : ""}`}>4</h1>
+              <p>Create Site</p>
+            </div>
+
+            <div className="line"></div>
+          </div>
+
+          {name === "email" ? (
+            <form
+              action=""
+              onSubmit={handleSubmit((data) => changeRoute(data, name="otp"))}
+            >
+              <label htmlFor="email" className="label">
+                Email<span className="imp">*</span>
+              </label>
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Enter email address"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Invalid email format",
+                  },
+                  maxLength: {
+                    value: 50,
+                    message: "Email must not exceed 50 characters",
+                  },
+                  validate: (value) => {
+                    if (
+                      value.endsWith("@gmail.com") ||
+                      value.endsWith("@rxware.com")
+                    ) {
+                      return true;
+                    }
+                    return "Only emails ending with @rxware.com or @gmail.com are accepted"; // Validation passes
+                  },
+                })}
+              />
+
+              {errors.email && (
+                <small className="errorMessage">{errors.email.message}</small>
+              )}
+
+              <button type="submit" className="button">
+                Next
+              </button>
+            </form>
+                  </div>
+      </div>
+    </>
+  );
+};

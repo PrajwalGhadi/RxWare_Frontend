@@ -1,0 +1,582 @@
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/Fonts/Lato-Regular.ttf");
+}
+@font-face {
+  font-family: "Lato-Light";
+  src: url("./assets/Fonts/Lato-Light.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato";
+}
+
+.signUpPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  position: relative;
+  background-image: url("../src/assets/RxWare_Sliding_Image_1.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.signUpPage .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 57, 118, 0.25);
+  display: flex;
+}
+.signUpPage .overlay .left-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2vw;
+}
+.signUpPage .overlay .left-div h1 {
+  color: white;
+  font-size: 1.75vw;
+}
+.signUpPage .overlay .left-div h3 {
+  width: 40%;
+  color: white;
+  font-size: 1.25vw;
+  font-weight: 100;
+  text-align: center;
+  margin-top: 2vw;
+}
+.signUpPage .overlay .right-div {
+  width: 100%;
+  padding: 0 3vw;
+  display: flex;
+  align-items: center;
+}
+.signUpPage .overlay .right-div .card {
+  width: 50%;
+  border: 5px solid;
+  height: 30vw;
+  border-radius: 1vw;
+  position: relative;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signUpPage .overlay .right-div .card .circle {
+  width: 7vw;
+  height: 7vw;
+  border: 1px solid;
+  border-radius: 100%;
+  position: absolute;
+  top: -13%;
+  left: 35%;
+}
+.signUpPage .overlay .right-div .card .circle img {
+  -o-object-position: cover;
+     object-position: cover;
+  width: 100%;
+  height: 100%;
+}
+.signUpPage .overlay .right-div .card .details {
+  width: 18vw;
+  height: 23vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1vw 0;
+  gap: 2vw;
+  font-family: "Lato";
+}
+.signUpPage .overlay .right-div .card .details h1 {
+  font-size: 1.25vw;
+}
+.signUpPage .overlay .right-div .card .details h1 span {
+  color: #3aff16;
+}
+.signUpPage .overlay .right-div .card .details .steps {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.signUpPage .overlay .right-div .card .details .steps .singleStep {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signUpPage .overlay .right-div .card .details .steps .singleStep h1 {
+  border: 1px solid;
+  padding: 0.5vw 0.75vw;
+  border-radius: 100%;
+  background-color: #001f3f;
+  color: white;
+  z-index: 1;
+  font-family: "Lato";
+  font-size: 1vw;
+}
+.signUpPage .overlay .right-div .card .details .steps .singleStep .active {
+  background-color: #3aff16;
+  color: #001f3f;
+  border: none;
+}
+.signUpPage .overlay .right-div .card .details .steps .singleStep P {
+  margin-top: 0.5vw;
+  font-size: 0.75vw;
+  opacity: 0.7;
+  font-weight: 500;
+}
+.signUpPage .overlay .right-div .card .details .steps .singleStep .activeStep {
+  opacity: 1;
+  color: #001f3f;
+  font-weight: 600;
+  scale: 1.1;
+}
+.signUpPage .overlay .right-div .card .details .steps .line {
+  position: absolute;
+  border: 1px solid;
+  width: 90%;
+  margin: 0 0.25vw;
+  top: 30%;
+}
+.signUpPage .overlay .right-div .card .details form {
+  position: relative;
+  width: 100%;
+}
+.signUpPage .overlay .right-div .card .details form .multi-inputs {
+  display: flex;
+  gap: 1vw;
+}
+.signUpPage .overlay .right-div .card .details form .input-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 0.5vw;
+}
+.signUpPage .overlay .right-div .card .details form .domain-input {
+  margin-top: -2vw;
+}
+.signUpPage .overlay .right-div .card .details form .imp {
+  position: absolute;
+  right: 2%;
+  top: 40%;
+  z-index: 1;
+}
+.signUpPage .overlay .right-div .card .details form .label, .signUpPage .overlay .right-div .card .details form .email-label {
+  margin-bottom: 0.75vw;
+  font-size: 1vw;
+  font-weight: 600;
+  color: black;
+  background-color: white;
+}
+.signUpPage .overlay .right-div .card .details form .label .imp, .signUpPage .overlay .right-div .card .details form .email-label .imp {
+  color: red;
+}
+.signUpPage .overlay .right-div .card .details form .otpLabel {
+  margin-left: 1vw;
+  font-size: 0.8vw;
+  font-weight: 600;
+}
+.signUpPage .overlay .right-div .card .details form .email-label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signUpPage .overlay .right-div .card .details form .otpResendTimer {
+  color: red;
+}
+.signUpPage .overlay .right-div .card .details form .otpResendLabel, .signUpPage .overlay .right-div .card .details form .otpResendTimer {
+  font-style: italic;
+  margin-top: 1vw;
+  text-align: center;
+  font-size: 0.75vw;
+  font-weight: 800;
+  font-family: "Lato-Light";
+}
+.signUpPage .overlay .right-div .card .details form .otpResendLabel span, .signUpPage .overlay .right-div .card .details form .otpResendTimer span {
+  color: blue;
+  font-size: 0.85vw;
+  font-weight: 800;
+  font-family: "Lato-Light";
+}
+.signUpPage .overlay .right-div .card .details form .input-field {
+  font-size: 0.75vw;
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  border: 1px solid #ddd;
+  border-radius: 0.25vw;
+  box-shadow: 0px 0px 3px gray;
+  outline: none;
+  transition: border-color 0.3s ease;
+  margin-bottom: 0.75vw;
+  position: relative;
+}
+.signUpPage .overlay .right-div .card .details form .input-field:focus {
+  border-color: #3aff16;
+  box-shadow: 0 0 5px #3aff16;
+}
+.signUpPage .overlay .right-div .card .details form input::-ms-reveal,
+.signUpPage .overlay .right-div .card .details form input::-ms-clear {
+  display: none;
+}
+.signUpPage .overlay .right-div .card .details form #eye-icon {
+  position: absolute;
+  z-index: 1;
+  right: 5%;
+  top: 45%;
+  font-size: 1.25vw;
+}
+.signUpPage .overlay .right-div .card .details form .errorMessage {
+  display: inline-block;
+  font-size: 0.75vw;
+  color: red;
+  margin-top: -0.25vw;
+}
+.signUpPage .overlay .right-div .card .details form .button {
+  font-size: 1vw;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.25vw;
+  background-color: #3aff16;
+  color: #001f3f;
+  padding: 0.5vw 2vw;
+  margin-top: 1.5vw;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.signUpPage .overlay .right-div .card .details form .button:active {
+  scale: 0.97;
+}
+.signUpPage .overlay .right-div .card .details .otp-container {
+  display: flex;
+  gap: 1vw;
+  justify-content: center;
+}
+.signUpPage .overlay .right-div .card .details .otp-container .otp-input {
+  margin-top: 1vw;
+  width: 15%;
+  padding: 0.75vw;
+  border: 1px solid #ddd;
+  border-radius: 0.5vw;
+  box-shadow: 0px 5px 5px gray;
+  outline: none;
+  transition: border-color 0.3s ease;
+  text-align: center;
+}
+.signUpPage .overlay .right-div .card .details .otp-container .otp-input:focus {
+  border-color: #3aff16;
+  box-shadow: 0 3px 2px #3aff16;
+}
+.signUpPage .overlay .right-div .card .details .alignButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+.signUpPage .overlay .right-div .card .details .page-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+  text-align: center;
+}
+.signUpPage .overlay .right-div .card .details .page-details .domain-heading {
+  font-size: 1vw;
+}
+.signUpPage .overlay .right-div .card .details .page-details .domain-para1 {
+  font-size: 0.75vw;
+}
+.signUpPage .overlay .right-div .card .details .page-details .domain-para2 {
+  margin-top: -0.5vw;
+  font-size: 0.65vw;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.navbar {
+  width: 100%;
+  padding: 0.25vw 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .NavLinks {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+}
+.navbar .NavLinks .links {
+  font-size: 1vw;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+}
+.navbar .NavLinks .signUpBtn {
+  padding: 0.5vw 2vw;
+  background-color: #3aff16;
+  border-radius: 0.5vw;
+}
+
+.slidingHeroSection {
+  width: 100%;
+  height: 25vw;
+}
+.slidingHeroSection .swiper {
+  width: 100%;
+  height: 100%;
+}
+.slidingHeroSection .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slidingHeroSection .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.slidingHeroSection .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(0, 0, 0);
+  transition: all 0.3s ease; /* Smooth transition for size change */
+}
+.slidingHeroSection .swiper-pagination-bullet-active {
+  width: 15px; /* Larger size for active bullet */
+  height: 15px;
+  background-color: White; /* Optionally change color */
+  transform: scale(1.2); /* Optional: Add scaling effect */
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+.slidingHeroSection .image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.slidingHeroSection .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.slidingHeroSection .overlay {
+  position: absolute;
+  width: 100%;
+  height: 25vw;
+  z-index: 3;
+  background-color: rgba(0, 57, 118, 0.25);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 2vw;
+  padding: 5vw 0;
+}
+.slidingHeroSection .overlay h1 {
+  font-size: 3vw;
+  font-family: "Lato";
+}
+.slidingHeroSection .overlay p {
+  width: 60%;
+  font-size: 2vw;
+  font-family: "Lato";
+  font-weight: 100;
+}
+.slidingHeroSection .overlay .buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  margin-top: 3vw;
+}
+.slidingHeroSection .overlay .buttons button {
+  font-size: 1vw;
+  padding: 0.5vw 1.5vw;
+  border: none;
+  border-radius: 0.5vw;
+  color: #001f3f;
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+}
+.slidingHeroSection .overlay .buttons button .rightArrow {
+  font-size: 1.25vw;
+  font-weight: 900;
+}
+.slidingHeroSection .overlay .buttons .signUp {
+  background-color: #3aff16;
+  transition: 0.3s ease;
+}
+.slidingHeroSection .overlay .buttons .signUp:hover {
+  color: #3aff16;
+  background-color: #001f3f;
+  border: 2px solid #3aff16;
+}
+.slidingHeroSection .overlay .buttons .signIn {
+  background-color: #001f3f;
+  color: #3aff16;
+  border: 2px solid #3aff16;
+  transition: 0.3s ease;
+}
+.slidingHeroSection .overlay .buttons .signIn:hover {
+  color: #001f3f;
+  background-color: #3aff16;
+}
+
+.heroSection {
+  width: 100%;
+  padding: 1vw;
+  background-color: #001f3f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heroSection .content {
+  width: 70vw;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  justify-content: center;
+  align-items: center;
+}
+.heroSection .content h1 {
+  text-align: center;
+  font-size: 2.25vw;
+  font-weight: 500;
+  color: #3aff16;
+}
+.heroSection .content .multipleCards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1vw;
+  padding: 0 1.75vw;
+  color: black;
+}
+.heroSection .content .multipleCards .cards {
+  border: 0.35vw solid #3aff16;
+  width: 16vw;
+  height: 12vw;
+  background-color: white;
+  margin-left: 1vw;
+  margin-bottom: 1vw;
+  padding: 0.25vw 0;
+}
+.heroSection .content .multipleCards .cards .cardImage {
+  text-align: center;
+}
+.heroSection .content .multipleCards .cards .cardImage h1 {
+  font-size: 1.25vw;
+  font-weight: 600;
+  color: #001f3f;
+  padding: 0 1vw;
+}
+.heroSection .content .multipleCards .cards .cardContent {
+  margin: 0.5vw;
+  justify-content: center;
+  align-items: center;
+}
+.heroSection .content .multipleCards .cards .cardContent p {
+  width: 100%;
+  font-size: 0.8vw;
+  text-align: center;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+footer {
+  width: 100%;
+  background-color: #001f3f;
+  color: white;
+  padding: 1vw 0vw;
+}
+footer .footer-top-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1vw 5vw;
+}
+footer .footer-top-container .footer-logo {
+  width: 100%;
+}
+footer .footer-top-container .footer-logo img {
+  width: 10vw;
+}
+footer .footer-top-container .footer-service {
+  width: 50%;
+  padding: 0.5vw 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+footer .footer-top-container .footer-company {
+  width: 30%;
+  padding: 0.5vw 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+footer .footer-top-container .footer-contact {
+  width: 50%;
+  padding: 0.5vw 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+footer .footer-top-container .footer-contact .details {
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+}
+footer .footer-top-container .footer-contact .callIcon {
+  color: #3aff16;
+  border: 1px solid #3aff16;
+  padding: 0.25vw;
+  font-size: 1.25vw;
+  border-radius: 100%;
+}
+footer .footer-top-container .footer-contact .locationIcon {
+  font-size: 1.25vw;
+  color: #3aff16;
+}
+footer .footer-top-container .footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25vw;
+}
+footer .footer-top-container .footer-links p {
+  opacity: 0.7;
+}
+footer .footer-top-container p:hover {
+  opacity: 1;
+  scale: 1.05;
+}
+footer hr {
+  opacity: 0.7;
+}
+footer .footer-bottom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw;
+}/*# sourceMappingURL=index.css.map */
