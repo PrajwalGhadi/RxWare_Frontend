@@ -71,7 +71,7 @@ const Otp = ({ onNext }) => {
 
   return (
     <SignUpCard currentStep="otp">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="input-wrapper">
         <p className="otpLabel">Please Enter the OTP to Verify your account</p>
         <div className="otp-container">
           {[...Array(4)].map((_, index) => (

@@ -1,0 +1,296 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+  .signUpPage .overlay .left-div {
+    display: none;
+  }
+  .signUpPage .overlay .right-div {
+    padding: initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .signUpPage .overlay .right-div .card {
+    width: 75%;
+    height: 80vh;
+    border-radius: 4vw;
+  }
+  .signUpPage .overlay .right-div .card .circle {
+    width: 20vw;
+    height: 20vw;
+    top: -11vw;
+    left: 37.5%;
+  }
+  .signUpPage .overlay .right-div .card .details {
+    width: 80%;
+    height: 60vh;
+    padding: 2vw 0;
+    gap: 4vw;
+  }
+  .signUpPage .overlay .right-div .card .details h1 {
+    font-size: 5vw;
+  }
+  .signUpPage .overlay .right-div .card .details .steps .singleStep h1 {
+    padding: 2vw 2.75vw;
+    font-size: 3vw;
+    font-weight: 100;
+  }
+  .signUpPage .overlay .right-div .card .details .steps .singleStep P {
+    margin-top: 1.75vw;
+    font-size: 2.75vw;
+  }
+  .signUpPage .overlay .right-div .card .details .steps .singleStep .activeStep {
+    scale: 1.2;
+  }
+  .signUpPage .overlay .right-div .card .details form {
+    margin-top: 0vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .multi-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 0vw;
+    margin-top: -3.5vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper {
+    margin-top: 2.5vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .label, .signUpPage .overlay .right-div .card .details form .email-label {
+    margin-bottom: 1vw;
+    font-size: 3.25vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .otpLabel {
+    text-align: center;
+    margin-left: 0vw;
+    font-size: 2.9vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .email-label {
+    width: 100%;
+    display: flex;
+    align-items: initial;
+    justify-content: initial;
+  }
+  .signUpPage .overlay .right-div .card .details form .otpResendTimer {
+    color: red;
+  }
+  .signUpPage .overlay .right-div .card .details form .otpResendLabel, .signUpPage .overlay .right-div .card .details form .otpResendTimer {
+    margin-top: 5vw;
+    font-size: 3.25vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .otpResendLabel span, .signUpPage .overlay .right-div .card .details form .otpResendTimer span {
+    font-size: 3.5vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-field {
+    font-size: 3.25vw;
+    width: 100%;
+    padding: 1.5vw 1.5vw;
+    border: 1px solid #ddd;
+    border-radius: 1vw;
+    box-shadow: 0px 0px 2px gray;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-bottom: 0.75vw;
+    position: relative;
+  }
+  .signUpPage .overlay .right-div .card .details form #eye-icon {
+    top: 70%;
+    font-size: 6.25vw;
+    transform: translateY(-50%);
+  }
+  .signUpPage .overlay .right-div .card .details form .errorMessage {
+    font-size: 2.75vw;
+    margin-top: 0.75vw;
+    margin-bottom: -2vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .button {
+    font-size: 3vw;
+    border-radius: 1.5vw;
+    padding: 2.5vw 8vw;
+    margin-top: 6vw;
+  }
+  .signUpPage .overlay .right-div .card .details .otp-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .signUpPage .overlay .right-div .card .details .otp-container .otp-input {
+    margin-top: 3vw;
+    padding: 2.5vw;
+    border-radius: 1.5vw;
+    box-shadow: 0px 3px 2px gray;
+    font-size: 3vw;
+    text-align: center;
+  }
+  .signUpPage .overlay .right-div .card .details .otp-container .otp-input:focus {
+    box-shadow: 0px 3px 2px #3aff16;
+  }
+  .signUpPage .overlay .right-div .card .details .page-details {
+    gap: 1vw;
+    margin-top: 2vw;
+  }
+  .signUpPage .overlay .right-div .card .details .page-details .domain-heading {
+    font-size: 3.75vw;
+    margin-bottom: 1vw;
+  }
+  .signUpPage .overlay .right-div .card .details .page-details .domain-para1 {
+    font-size: 2.5vw;
+    scale: 1.1;
+  }
+  .signUpPage .overlay .right-div .card .details .page-details .domain-para2 {
+    font-size: 2.25vw;
+    scale: 1.1;
+  }
+  .signUpPage .overlay .right-div .card .details #domain-container {
+    padding-bottom: 4vw;
+  }
+  .navbar {
+    width: 100%;
+    padding: 0.25vw 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar .image {
+    width: 20vw;
+  }
+  .navbar .image img {
+    width: 100%;
+  }
+  .navbar .NavLinks {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    display: none;
+  }
+  .navbar .NavLinks .links {
+    font-size: 1vw;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+  }
+  .navbar .NavLinks .signUpBtn {
+    padding: 0.5vw 2vw;
+    background-color: #3aff16;
+    border-radius: 0.5vw;
+  }
+  .slidingHeroSection {
+    height: 50vw;
+  }
+  .slidingHeroSection .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+  }
+  .slidingHeroSection .swiper-pagination-bullet-active {
+    width: 12px; /* Larger size for active bullet */
+    height: 12px;
+  }
+  .slidingHeroSection .overlay {
+    height: 100%;
+    gap: 2vw;
+    padding: 10vw 0;
+  }
+  .slidingHeroSection .overlay h1 {
+    font-size: 5vw;
+    font-weight: 500;
+  }
+  .slidingHeroSection .overlay p {
+    width: 80%;
+    font-size: 3vw;
+  }
+  .slidingHeroSection .overlay .buttons {
+    gap: 2vw;
+    margin-top: 6vw;
+  }
+  .slidingHeroSection .overlay .buttons button {
+    font-size: 3vw;
+    padding: 0.75vw 4vw;
+    border-radius: 1vw;
+    gap: 1vw;
+  }
+  .slidingHeroSection .overlay .buttons button .rightArrow {
+    font-size: 4vw;
+  }
+  .slidingHeroSection .overlay .buttons .signIn {
+    border: 1px solid #3aff16;
+  }
+  .heroSection {
+    padding: 5vw;
+  }
+  .heroSection .content {
+    width: 100vw;
+    gap: 5vw;
+  }
+  .heroSection .content h1 {
+    font-size: 5vw;
+  }
+  .heroSection .content .multipleCards {
+    gap: 4vw;
+  }
+  .heroSection .content .multipleCards .cards {
+    border: 0.75vw solid #3aff16;
+    width: 40vw;
+    height: 35vw;
+    padding: 1vw 0;
+  }
+  .heroSection .content .multipleCards .cards .cardImage img {
+    width: 10vw;
+  }
+  .heroSection .content .multipleCards .cards .cardImage h1 {
+    font-size: 3vw;
+  }
+  .heroSection .content .multipleCards .cards .cardContent {
+    padding: 2vw 0;
+  }
+  .heroSection .content .multipleCards .cards .cardContent p {
+    font-size: 2.5vw;
+  }
+  footer {
+    padding: 2vw 0vw;
+  }
+  footer .footer-top-container {
+    flex-direction: column;
+    justify-content: initial;
+    gap: 2vw;
+    padding: 1vw 5vw;
+  }
+  footer .footer-top-container .footer-logo img {
+    width: 25vw;
+  }
+  footer .footer-top-container .footer-service {
+    width: 100%;
+    gap: 2vw;
+  }
+  footer .footer-top-container .footer-service h1 {
+    font-size: 4vw;
+  }
+  footer .footer-top-container .footer-company {
+    width: 100%;
+    gap: 2vw;
+  }
+  footer .footer-top-container .footer-company h1 {
+    font-size: 4vw;
+  }
+  footer .footer-top-container .footer-contact {
+    width: 100%;
+    gap: 2vw;
+  }
+  footer .footer-top-container .footer-contact h1 {
+    font-size: 4vw;
+  }
+  footer .footer-top-container .footer-contact .details {
+    gap: 2vw;
+  }
+  footer .footer-top-container .footer-contact .callIcon {
+    padding: 0.5vw;
+    font-size: 4vw;
+  }
+  footer .footer-top-container .footer-contact .locationIcon {
+    font-size: 4vw;
+  }
+  footer .footer-top-container .footer-links {
+    gap: 1vw;
+  }
+  footer .footer-top-container p:hover {
+    scale: 1.05;
+  }
+  footer .footer-bottom-container {
+    padding: 4vw;
+  }
+}/*# sourceMappingURL=tabletView.css.map */

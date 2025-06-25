@@ -3,23 +3,24 @@ import SignUpCard from "../../../components/utils/signUpCard";
 import { useForm } from "react-hook-form";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-
 const Details = ({ onNext }) => {
   const details_input = [
     {
       labelName: "First Name",
       labelClass: "label",
-      patternValue: /^[a-zA-Z0-9_]{3,20}$/,
-      patternMessage:
-        "Username must be 3-20 characters with letters, numbers, or underscores.",
+      pattern: {
+        value: /^[a-zA-Z]{3,30}$/,
+        message: "Name must be 3-30 letters only",
+      },
     },
 
     {
       labelName: "Last Name",
       labelClass: "label",
-      patternValue: /^[a-zA-Z0-9_]{3,20}$/,
-      patternMessage:
-        "Username must be 3-20 characters with letters, numbers, or underscores.",
+      pattern: {
+        value: /^[a-zA-Z]{3,30}$/,
+        message: "Name must be 3-30 letters only",
+      },
     },
 
     // {
@@ -44,14 +45,12 @@ const Details = ({ onNext }) => {
     reset();
   };
 
-
   const [showPassword, setShowPassword] = useState(false);
 
   function togglePassword() {
-    console.log('clicked on togglePassword')
+    console.log("clicked on togglePassword");
     setShowPassword((prevState) => !prevState);
   }
-
 
   return (
     <SignUpCard currentStep="details">
@@ -66,18 +65,12 @@ const Details = ({ onNext }) => {
                   <span className="imp">*</span>
                 </label>
                 <input
-                  type= "text"
+                  type="text"
                   className="input-field"
                   placeholder={`Enter your ${item.labelName.toLowerCase()}`}
                   {...register(`${item.labelName}`, {
                     required: `${item.labelName} is required`,
-                    pattern: {
-                      // {//} => Regex pattern is always return inside double //
-                      // {^$} => Start regex pattern with ^ and ends with $
-                      //{/^[][]$/} => First array is used to set the pattern, second array is used to set the min and max length
-                      value: item.patternValue,
-                      message: item.patternMessage,
-                    },
+                    pattern: item.pattern,
                   })}
                 />
 
@@ -93,7 +86,7 @@ const Details = ({ onNext }) => {
         </div>
 
         <div className="input-wrapper">
-          <label htmlFor= "Password" className="label">
+          <label htmlFor="Password" className="label">
             Password
             <span className="imp">*</span>
           </label>
@@ -104,14 +97,17 @@ const Details = ({ onNext }) => {
             {...register(`password`, {
               required: `Password is required`,
               pattern: {
-                
-                value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/,
-                message: "Password must be at least 8 characters, include uppercase, lowercase, number, and special character.",
+                value:
+                  /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/,
+                message:
+                  "8+ chars, 1 uppercase, 1 number, 1 special char.",
               },
             })}
           />
 
-          <span onClick = {()=> togglePassword()} id="eye-icon">{showPassword ? (<AiOutlineEyeInvisible />) : (<AiOutlineEye />)}</span>
+          <span onClick={() => togglePassword()} id="eye-icon">
+            {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+          </span>
 
           {/* Error Handling */}
           {errors["password"] && (
