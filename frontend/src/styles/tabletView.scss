@@ -124,7 +124,7 @@
               .errorMessage {
                 font-size: 2.75vw; //updated
                 margin-top: 0.75vw; //updated //Adjusted to look better
-                margin-bottom: -2vw;  //newly added
+                margin-bottom: -2vw; //newly added
               }
 
               .button {
@@ -181,6 +181,7 @@
       }
     }
   }
+
   .navbar {
     width: 100%;
     padding: 0.25vw 5vw;
@@ -196,30 +197,87 @@
     }
 
     .NavLinks {
-      display: flex;
-      align-items: center;
-      gap: 2vw;
-
       display: none; //Newly Added for Mobile View
+    }
 
-      .links {
-        font-size: 1vw;
-        font-weight: 500;
-        text-decoration: none;
-        color: black;
+    .mobile-tablet-Navlink {
+      display: initial;
+
+      .menu-icon {
+        display: inline-block;
+        opacity: 0;
+        transform: scale(0.9); /* Slightly smaller */
+        transition: all 0.3s ease;
+        font-size: 4vw;
       }
 
-      .signUpBtn {
-        padding: 0.5vw 2vw;
-        background-color: #3aff16;
-        border-radius: 0.5vw;
+      .menu-icon.open {
+        opacity: 1;
+        transform: scale(1); /* Full size */
+      }
+
+      .menu-icon.close {
+        opacity: 1;
+        transform: scale(0.9); /* Fade and shrink */
+        pointer-events: none; /* Prevent interaction during transition */
+      }
+
+      .mobile-tablet-menu-page {
+        position: absolute;
+        width: 100%;
+        height: 52vw;
+        z-index: 9;
+
+        top: 8vw;
+        left: 0;
+
+        background-color: #ffffff;
+
+        /* Initial hidden state */
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none; /* Prevent interaction when hidden */
+
+        /* Smooth transition for transform and opacity */
+        transition: transform 0.3s ease-in-out, opacity 0.4s ease-in-out;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+
+        padding: 1vw 3vw;
+
+        h1 {
+          font-size: 3.5vw;
+          letter-spacing: 0.25vw;
+          color: #001f3f;
+        }
+
+        .Services {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5vw;
+
+          p {
+            font-size: 3.25vw;
+            padding: 0 4vw;
+            opacity: 0.75;
+          }
+        }
+      }
+
+      /* Active state for showing the menu */
+      .mobile-tablet-menu-page.active {
+        transform: translateY(0); /* Slide into view */
+        opacity: 1; /* Fully visible */
+        pointer-events: all; /* Enable interaction */
       }
     }
   }
 
   .slidingHeroSection {
-    height: 50vw;  //updated
-   
+    height: 50vw; //updated
+
     .swiper-pagination-bullet {
       width: 12px; //updated
       height: 12px; //updated
@@ -227,9 +285,8 @@
 
     .swiper-pagination-bullet-active {
       width: 12px; /* Larger size for active bullet */
-      height: 12px; 
+      height: 12px;
     }
-
 
     .overlay {
       height: 100%;
@@ -260,10 +317,8 @@
         }
 
         .signIn {
-   
           border: 1px solid #3aff16; //updated
         }
-
       }
     }
   }
@@ -327,7 +382,7 @@
         gap: 2vw; //udpated
 
         h1 {
-          font-size: 4vw;  //updated
+          font-size: 4vw; //updated
         }
       }
 
@@ -336,7 +391,7 @@
         gap: 2vw; //udpated
 
         h1 {
-          font-size: 4vw;  //updated
+          font-size: 4vw; //updated
         }
       }
 
@@ -345,7 +400,7 @@
         gap: 2vw; //udpated
 
         h1 {
-          font-size: 4vw;  //updated
+          font-size: 4vw; //updated
         }
 
         .details {

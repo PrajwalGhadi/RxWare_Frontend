@@ -326,6 +326,9 @@
   background-color: #3aff16;
   border-radius: 0.5vw;
 }
+.navbar .mobile-tablet-Navlink {
+  display: none;
+}
 
 .slidingHeroSection {
   width: 100%;
