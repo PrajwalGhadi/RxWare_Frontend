@@ -427,16 +427,17 @@
 .slidingHeroSection .overlay .buttons .signUp {
   background-color: #3aff16;
   transition: 0.3s ease;
+  border: 1px solid #3aff16;
 }
 .slidingHeroSection .overlay .buttons .signUp:hover {
   color: #3aff16;
   background-color: #001f3f;
-  border: 2px solid #3aff16;
+  border: 1px solid #3aff16;
 }
 .slidingHeroSection .overlay .buttons .signIn {
   background-color: #001f3f;
   color: #3aff16;
-  border: 2px solid #3aff16;
+  border: 1px solid #3aff16;
   transition: 0.3s ease;
 }
 .slidingHeroSection .overlay .buttons .signIn:hover {

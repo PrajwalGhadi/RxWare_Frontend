@@ -12,6 +12,7 @@ const Details = ({ onNext }) => {
         value: /^[a-zA-Z]{3,30}$/,
         message: "Name must be 3-30 letters only",
       },
+      requiredMessage: "First Name is required"
     },
 
     {
@@ -62,14 +63,14 @@ const Details = ({ onNext }) => {
                 <label htmlFor={item.labelName} className={item.labelClass}>
                   {item.labelName.charAt(0).toUpperCase() +
                     item.labelName.slice(1)}
-                  <span className="imp">*</span>
+                  {item.requiredMessage ? <span className="imp">*</span> : ''}
                 </label>
                 <input
                   type="text"
                   className="input-field"
                   placeholder={`Enter your ${item.labelName.toLowerCase()}`}
                   {...register(`${item.labelName}`, {
-                    required: `${item.labelName} is required`,
+                    required: item?.requiredMessage,
                     pattern: item.pattern,
                   })}
                 />

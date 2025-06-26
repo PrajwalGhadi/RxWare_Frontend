@@ -521,17 +521,18 @@
       .signUp {
         background-color: #3aff16;
         transition: 0.3s ease;
+        border: 1px solid #3aff16;  //added this because while overing size is increasing and decreasing due which buttons are moving slightly
       }
       .signUp:hover {
         color: #3aff16;
         background-color: #001f3f;
-        border: 2px solid #3aff16;
+        border: 1px solid #3aff16; 
       }
 
       .signIn {
         background-color: #001f3f;
         color: #3aff16;
-        border: 2px solid #3aff16;
+        border: 1px solid #3aff16;
         transition: 0.3s ease;
       }
       .signIn:hover {
