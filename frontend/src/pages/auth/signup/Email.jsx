@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import SignUpCard from "../../../components/utils/signUpCard";
 import { MdOutlineEmail } from "react-icons/md";
 
-
 const Email = ({ onNext }) => {
   const {
     register,
@@ -13,20 +12,20 @@ const Email = ({ onNext }) => {
 
   const onSubmit = (data) => {
     onNext(data, "email");
-    reset()
+    reset();
   };
 
   return (
     <SignUpCard currentStep="email">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="input-wrapper">
-          <label htmlFor="email" className="email-label">
+          <label htmlFor="email" className="label">
             Enter your Email<span className="imp">*</span>
           </label>
           <input
             type="text"
             className="input-field"
-            placeholder='📧 Enter your Email'
+            placeholder="📧 Email"
             {...register("email", {
               required: "Email is required",
               pattern: {
@@ -35,9 +34,9 @@ const Email = ({ onNext }) => {
               },
             })}
           />
-          {errors.email && (
-            <small className="errorMessage">{errors.email.message}</small>
-          )}
+          <small className={`errorMessage ${errors.email ? "active" : ""}`}>
+            {errors.email?.message}
+          </small>
         </div>
         <div className="alignButton">
           <button type="submit" className="button">

@@ -10,9 +10,9 @@ const Details = ({ onNext }) => {
       labelClass: "label",
       pattern: {
         value: /^[a-zA-Z]{3,30}$/,
-        message: "Name must be 3-30 letters only",
+        message: "First name must be 3-30 characters.",
       },
-      requiredMessage: "First Name is required"
+      requiredMessage: "First Name is required",
     },
 
     {
@@ -20,18 +20,9 @@ const Details = ({ onNext }) => {
       labelClass: "label",
       pattern: {
         value: /^[a-zA-Z]{3,30}$/,
-        message: "Name must be 3-30 letters only",
+        message: "Name must be 3-30 letters",
       },
     },
-
-    // {
-    //   labelName: "password",
-    //   labelClass: "label",
-    //   patternValue:
-    //     /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/,
-    //   patternMessage:
-    //     "Password must be at least 8 characters, include uppercase, lowercase, number, and special character.",
-    // },
   ];
 
   const {
@@ -63,7 +54,7 @@ const Details = ({ onNext }) => {
                 <label htmlFor={item.labelName} className={item.labelClass}>
                   {item.labelName.charAt(0).toUpperCase() +
                     item.labelName.slice(1)}
-                  {item.requiredMessage ? <span className="imp">*</span> : ''}
+                  {item.requiredMessage ? <span className="imp">*</span> : ""}
                 </label>
                 <input
                   type="text"
@@ -76,11 +67,11 @@ const Details = ({ onNext }) => {
                 />
 
                 {/* Error Handling */}
-                {errors[item.labelName] && (
-                  <small className="errorMessage">
-                    {errors[item.labelName]?.message}
-                  </small>
-                )}
+                <small
+                  className={`errorMessage ${errors[item.labelName] ? "active" : ""}`}
+                >
+                  {errors[item.labelName]?.message}
+                </small>
               </div>
             );
           })}
@@ -100,8 +91,7 @@ const Details = ({ onNext }) => {
               pattern: {
                 value:
                   /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/,
-                message:
-                  "8+ chars, 1 uppercase, 1 number, 1 special char.",
+                message: "8+ chars, 1 uppercase, 1 number, 1 special char.",
               },
             })}
           />
@@ -111,16 +101,14 @@ const Details = ({ onNext }) => {
           </span>
 
           {/* Error Handling */}
-          {errors["password"] && (
-            <small className="errorMessage">
-              {errors["password"]?.message}
-            </small>
-          )}
+          <small className={`errorMessage ${errors.password ? "active" : ""}`}>
+            {errors.password?.message}
+          </small>
         </div>
 
         <div className="alignButton">
           <button type="submit" className="button">
-            Next
+            Next Step
           </button>
         </div>
       </form>

@@ -13,7 +13,7 @@
         justify-content: center; //updated
 
         .card {
-          width: 75%; //updated
+          width: 80%; //updated
           height: 80vh; //udpated
           border-radius: 4vw; //updated
 
@@ -27,10 +27,10 @@
 
           .details {
             width: 80%; //updated
-            height: 60vh; //udpated
+            height: 68vh; //udpated
             padding: 2vw 0; //updated
 
-            gap: 4vw; //updated
+            gap: 3vw; //updated
             h1 {
               font-size: 5vw; //updated
             }
@@ -38,120 +38,95 @@
             .steps {
               .singleStep {
                 h1 {
-                  padding: 2vw 2.75vw; //updated
+                  padding: 2vw 3vw; //updated
 
-                  font-size: 3vw; //updatd
-                  font-weight: 100; //updated
+                  font-size: 3vw; //updated for tabletview
+                  font-weight: 500; //updated
                 }
 
                 P {
-                  margin-top: 1.75vw; //updated
-                  font-size: 2.75vw; //updated
+                  margin-top: 2.5vw; //updated  //udpated
+                  font-size: 2.5vw; //updated  //udpated
+                  opacity: 0.6;
                 }
 
                 .activeStep {
-                  scale: 1.2; //updated
+                  scale: 1.1; //updated  //updated
                 }
               }
             }
 
             form {
-              margin-top: 0vw; //updated
+              margin-top: 4.5vw; //updated
               .multi-inputs {
-                display: flex; //updated
                 flex-direction: column; //updated
-                gap: 0vw; //updated
-
-                margin-top: -3.5vw; //updated
+                margin-top: -3.5vw; //updated for Adjustment purpose because form already has margin
               }
 
               .input-wrapper {
-                margin-top: 2.5vw; //updated
-              }
+                .label {
+                  margin-bottom: 2vw; //updated
+                  font-size: 3vw; //updated
+                  .imp {
+                    top: 35%; //updated
+                  }
+                }
 
-              .label {
-                margin-bottom: 1vw; //updated
-                font-size: 3.25vw; //updated
-              }
+                .otp-label {
+                  @extend .label;
+                  font-size: 3vw; //adjusted
+                }
 
-              .otpLabel {
-                text-align: center; //newly added for mobile view
-                margin-left: 0vw; //updated
-                font-size: 2.9vw; //updated
-              }
+                .otpResendTimer {
+                  font-size: 3vw;
+                }
 
-              .email-label {
-                @extend .label;
-                width: 100%;
-                display: flex;
-                align-items: initial; //updated
-                justify-content: initial; //updated
-              }
+                .otpResendLabel {
+                  width: 100%; //newly added
+                  margin: 6vw 0; //updated
+                  font-size: 3vw; //updated
 
-              .otpResendTimer {
-                @extend .otpResendLabel;
-                color: red;
-              }
+                  span {
+                    font-size: 3.25vw; //updated
+                    font-weight: 500;
+                  }
+                }
 
-              .otpResendLabel {
-                margin-top: 5vw; //updated
-                font-size: 3.25vw; //updated
+                .otp-container {
+                  .otp-input {
+                    padding: 2.5vw; //updated
+                    border-radius: 1.5vw; //updated
+                    box-shadow: 0px 3px 2px gray; //updated
+                    font-size: 2.75vw;  //newly added for tabletview
+                  }
+                }
 
-                span {
-                  font-size: 3.5vw; //updated
+                .input-field {
+                  font-size: 2.5vw; //updated
+                  padding: 2vw; //updated
+                  border-radius: 1vw; //updated
+                }
+
+                #eye-icon {
+                  top: 40%; //updated
+                  font-size: 3.75vw; //updated
+                }
+
+                .errorMessage {
+                  height: 2rem; /* Reserve space for the error message */ //updated
+                  font-size: 2.5vw; //updated
+                  margin-top: 0.5vw; //Adjusted to look better  //udpated
                 }
               }
 
-              .input-field {
-                font-size: 3.25vw; //updated
-                width: 100%;
-                padding: 1.5vw 1.5vw; //updated
-                border: 1px solid #ddd;
-                border-radius: 1vw;
-                box-shadow: 0px 0px 2px gray;
-                outline: none;
-                transition: border-color 0.3s ease;
-                margin-bottom: 0.75vw;
-                position: relative;
-              }
-
-              #eye-icon {
-                top: 70%; //updated
-                font-size: 6.25vw; //updated
-                transform: translateY(-50%); //newly added
-              }
-
-              .errorMessage {
-                font-size: 2.75vw; //updated
-                margin-top: 0.75vw; //updated //Adjusted to look better
-                margin-bottom: -2vw; //newly added
-              }
-
-              .button {
-                font-size: 3vw; //updated
-                border-radius: 1.5vw; //updated
-                padding: 2.5vw 8vw; //updated
-                margin-top: 6vw; //updated
-              }
-            }
-
-            .otp-container {
-              // gap: 5vw; //updated
-              display: flex;
-              justify-content: space-evenly;
-              align-items: center;
-              // border: 1px solid;
-              .otp-input {
-                margin-top: 3vw; //updated
-                padding: 2.5vw; //updated
-                border-radius: 1.5vw; //updated
-                box-shadow: 0px 3px 2px gray;
-                font-size: 3vw; //newly added
-
-                text-align: center;
-              }
-              .otp-input:focus {
-                box-shadow: 0px 3px 2px #3aff16; //updated // shadow on input field
+              .alignButton {
+                margin-top: 4.5vw; //updated
+                .button {
+                  font-size: 2.5vw; //updated
+                  font-weight: 500; //newly added
+                  border-radius: 1.25vw; //updated
+                  padding: 2vw 6vw; //updated
+                }
               }
             }
 
@@ -171,10 +146,6 @@
                 font-size: 2.25vw; //updated
                 scale: 1.1; //updated
               }
-            }
-
-            #domain-container {
-              padding-bottom: 4vw;
             }
           }
         }

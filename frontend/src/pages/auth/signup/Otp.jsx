@@ -16,7 +16,12 @@ const Otp = ({ onNext }) => {
     formState: { errors },
   } = useForm({ mode: "onChange" });
 
-  const otpValues = [watch("otp0"), watch("otp1"), watch("otp2"), watch("otp3")];
+  const otpValues = [
+    watch("otp0"),
+    watch("otp1"),
+    watch("otp2"),
+    watch("otp3"),
+  ];
   const isOtpFilled = otpValues.every((digit) => /^\d$/.test(digit));
 
   const handleChange = async (e, index) => {
@@ -71,67 +76,69 @@ const Otp = ({ onNext }) => {
 
   return (
     <SignUpCard currentStep="otp">
-      <form onSubmit={handleSubmit(onSubmit)} className="input-wrapper">
-        <p className="otpLabel">Please Enter the OTP to Verify your account</p>
-        <div className="otp-container">
-          {[...Array(4)].map((_, index) => (
-            <input
-              key={index}
-              type="text"
-              maxLength="1"
-              className="otp-input"
-              {...register(`otp${index}`, { required: true })}
-              ref={(el) => (inputs.current[index] = el)}
-              onChange={(e) => handleChange(e, index)}
-              onKeyDown={handleKeyDown}
-              onPaste={handlePaste}
-              inputMode="numeric"
-              pattern="[0-9]*"
-            />
-          ))}
-        </div>
-
-        {Object.keys(errors).length > 0 && (
-          <div style={{ textAlign: "center", width: "100%", marginTop: "0.5vw" }}>
-            <small className="errorMessage">Please fill out all fields.</small>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="input-wrapper">
+          <p className="otp-label">
+            Please Enter the OTP to Verify your account
+          </p>
+          <div className="otp-container">
+            {[...Array(4)].map((_, index) => (
+              <input
+                key={index}
+                type="text"
+                maxLength="1"
+                className="otp-input"
+                {...register(`otp${index}`, { required: true })}
+                ref={(el) => (inputs.current[index] = el)}
+                onChange={(e) => handleChange(e, index)}
+                onKeyDown={handleKeyDown}
+                onPaste={handlePaste}
+                inputMode="numeric"
+                pattern="[0-9]*"
+              />
+            ))}
           </div>
-        )}
+          
+            <small className={`errorMessage ${Object.keys(errors).length > 0 ? "active" : ""}`}>
+             {Object.keys(errors).length > 0 ? "Please fill out all fields" : ""}
+            </small>
 
-        <p className="otpResendTimer">
-          {resendVisible
-            ? "OTP has expired"
-            : `00:${seconds < 10 ? "0" + seconds : seconds}`}
-        </p>
 
-        <div className="alignButton">
-          <button
-            type="submit"
-            className="button"
-            style={
-              {
+          <small className="otpResendTimer">
+            {resendVisible
+              ? "OTP has expired"
+              : `00:${seconds < 10 ? "0" + seconds : seconds}`}
+          </small>
+
+          <div className="alignButton">
+            <button
+              type="submit"
+              className="button"
+              style={{
                 backgroundColor: !isOtpFilled ? "#bcffaf" : "#3aff16",
-              }
-            }
-            disabled={!isOtpFilled}
-          >
-            Validate OTP
-          </button>
-        </div>
+              }}
+              disabled={!isOtpFilled}
+            >
+              Validate OTP
+            </button>
+          </div>
 
-        <p className="otpResendLabel">
-          Haven't received the OTP?{" "}
-          <span
-            onClick={handleResend}
-            style={{
-              color: resendVisible ? "blue" : "gray",
-              cursor: resendVisible ? "pointer" : "not-allowed",
-              textDecoration: resendVisible ? "underline" : "none",
-              pointerEvents: resendVisible ? "auto" : "none",
-            }}
-          >
-            Resend OTP
-          </span>
-        </p>
+          <p className="otpResendLabel">
+            Haven't received the OTP?{" "}
+            <span
+              onClick={handleResend}
+              style={{
+                color: resendVisible ? "#1082ff" : "gray",
+                cursor: resendVisible ? "pointer" : "not-allowed",
+                // textDecoration: resendVisible ? "underline" : "none",
+                textDecoration: "none",
+                pointerEvents: resendVisible ? "auto" : "none",
+              }}
+            >
+              Resend Otp
+            </span>
+          </p>
+        </div>
       </form>
     </SignUpCard>
   );

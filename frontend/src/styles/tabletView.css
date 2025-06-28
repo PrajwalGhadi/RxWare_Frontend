@@ -9,7 +9,7 @@
     justify-content: center;
   }
   .signUpPage .overlay .right-div .card {
-    width: 75%;
+    width: 80%;
     height: 80vh;
     border-radius: 4vw;
   }
@@ -21,105 +21,83 @@
   }
   .signUpPage .overlay .right-div .card .details {
     width: 80%;
-    height: 60vh;
+    height: 68vh;
     padding: 2vw 0;
-    gap: 4vw;
+    gap: 3vw;
   }
   .signUpPage .overlay .right-div .card .details h1 {
     font-size: 5vw;
   }
   .signUpPage .overlay .right-div .card .details .steps .singleStep h1 {
-    padding: 2vw 2.75vw;
+    padding: 2vw 3vw;
     font-size: 3vw;
-    font-weight: 100;
+    font-weight: 500;
   }
   .signUpPage .overlay .right-div .card .details .steps .singleStep P {
-    margin-top: 1.75vw;
-    font-size: 2.75vw;
+    margin-top: 2.5vw;
+    font-size: 2.5vw;
+    opacity: 0.6;
   }
   .signUpPage .overlay .right-div .card .details .steps .singleStep .activeStep {
-    scale: 1.2;
+    scale: 1.1;
   }
   .signUpPage .overlay .right-div .card .details form {
-    margin-top: 0vw;
+    margin-top: 4.5vw;
   }
   .signUpPage .overlay .right-div .card .details form .multi-inputs {
-    display: flex;
     flex-direction: column;
-    gap: 0vw;
     margin-top: -3.5vw;
   }
-  .signUpPage .overlay .right-div .card .details form .input-wrapper {
-    margin-top: 2.5vw;
-  }
-  .signUpPage .overlay .right-div .card .details form .label, .signUpPage .overlay .right-div .card .details form .email-label {
-    margin-bottom: 1vw;
-    font-size: 3.25vw;
-  }
-  .signUpPage .overlay .right-div .card .details form .otpLabel {
-    text-align: center;
-    margin-left: 0vw;
-    font-size: 2.9vw;
-  }
-  .signUpPage .overlay .right-div .card .details form .email-label {
-    width: 100%;
-    display: flex;
-    align-items: initial;
-    justify-content: initial;
-  }
-  .signUpPage .overlay .right-div .card .details form .otpResendTimer {
-    color: red;
-  }
-  .signUpPage .overlay .right-div .card .details form .otpResendLabel, .signUpPage .overlay .right-div .card .details form .otpResendTimer {
-    margin-top: 5vw;
-    font-size: 3.25vw;
-  }
-  .signUpPage .overlay .right-div .card .details form .otpResendLabel span, .signUpPage .overlay .right-div .card .details form .otpResendTimer span {
-    font-size: 3.5vw;
-  }
-  .signUpPage .overlay .right-div .card .details form .input-field {
-    font-size: 3.25vw;
-    width: 100%;
-    padding: 1.5vw 1.5vw;
-    border: 1px solid #ddd;
-    border-radius: 1vw;
-    box-shadow: 0px 0px 2px gray;
-    outline: none;
-    transition: border-color 0.3s ease;
-    margin-bottom: 0.75vw;
-    position: relative;
-  }
-  .signUpPage .overlay .right-div .card .details form #eye-icon {
-    top: 70%;
-    font-size: 6.25vw;
-    transform: translateY(-50%);
-  }
-  .signUpPage .overlay .right-div .card .details form .errorMessage {
-    font-size: 2.75vw;
-    margin-top: 0.75vw;
-    margin-bottom: -2vw;
-  }
-  .signUpPage .overlay .right-div .card .details form .button {
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .label, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label {
+    margin-bottom: 2vw;
     font-size: 3vw;
-    border-radius: 1.5vw;
-    padding: 2.5vw 8vw;
-    margin-top: 6vw;
   }
-  .signUpPage .overlay .right-div .card .details .otp-container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label .imp {
+    top: 35%;
   }
-  .signUpPage .overlay .right-div .card .details .otp-container .otp-input {
-    margin-top: 3vw;
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label {
+    font-size: 3vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .otpResendTimer {
+    font-size: 3vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .otpResendLabel {
+    width: 100%;
+    margin: 6vw 0;
+    font-size: 3vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .otpResendLabel span {
+    font-size: 3.25vw;
+    font-weight: 500;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-container .otp-input {
     padding: 2.5vw;
     border-radius: 1.5vw;
     box-shadow: 0px 3px 2px gray;
-    font-size: 3vw;
-    text-align: center;
+    font-size: 2.75vw;
   }
-  .signUpPage .overlay .right-div .card .details .otp-container .otp-input:focus {
-    box-shadow: 0px 3px 2px #3aff16;
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .input-field {
+    font-size: 2.5vw;
+    padding: 2vw;
+    border-radius: 1vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper #eye-icon {
+    top: 40%;
+    font-size: 3.75vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .errorMessage {
+    height: 2rem; /* Reserve space for the error message */
+    font-size: 2.5vw;
+    margin-top: 0.5vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .alignButton {
+    margin-top: 4.5vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .alignButton .button {
+    font-size: 2.5vw;
+    font-weight: 500;
+    border-radius: 1.25vw;
+    padding: 2vw 6vw;
   }
   .signUpPage .overlay .right-div .card .details .page-details {
     gap: 1vw;
@@ -136,9 +114,6 @@
   .signUpPage .overlay .right-div .card .details .page-details .domain-para2 {
     font-size: 2.25vw;
     scale: 1.1;
-  }
-  .signUpPage .overlay .right-div .card .details #domain-container {
-    padding-bottom: 4vw;
   }
   .navbar {
     width: 100%;

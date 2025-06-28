@@ -29,7 +29,7 @@ const Domain = ({ onNext }) => {
         </p>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="input-wrapper" id="domain-container">
+        <div className="input-wrapper">
           <label htmlFor="createSite" className="label">
             Site Name<span className="imp">*</span>
           </label>
@@ -50,9 +50,9 @@ const Domain = ({ onNext }) => {
               },
             })}
           />
-          {errors.domain && (
-            <small className="errorMessage">{errors.domain.message}</small>
-          )}
+          <small className={`errorMessage ${errors.domain ? "active" : ""}`}>
+            {errors.domain?.message}
+          </small>
         </div>
         <div className="alignButton">
           <button type="submit" className="button">
