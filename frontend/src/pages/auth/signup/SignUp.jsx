@@ -1,6 +1,6 @@
-import Email from "./Email";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Email from "./Email";
 import Otp from "./Otp";
 import Details from "./Details";
 import Domain from "./Domain";
@@ -22,7 +22,7 @@ const SignUp = () => {
       navigate(`/signup/${nextStep}`);
     } else {
       console.log("Final Data:", formData);
-      navigate("/"); // Redirect after completing all steps
+      navigate("/create-site"); // Redirect after completing all steps
     }
   };
 

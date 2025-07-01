@@ -56,6 +56,12 @@ const Otp = ({ onNext }) => {
     onNext({ otp }, "otp");
   };
 
+  const handleResend = () => {
+    if (!resendVisible) return;
+    setSeconds(30);
+    setResendVisible(false);
+  };
+
   useEffect(() => {
     if (!resendVisible && seconds > 0) {
       const timer = setInterval(() => {
@@ -67,13 +73,6 @@ const Otp = ({ onNext }) => {
       return () => clearInterval(timer);
     }
   }, [seconds, resendVisible]);
-
-  const handleResend = () => {
-    if (!resendVisible) return;
-    setSeconds(30);
-    setResendVisible(false);
-  };
-
   return (
     <SignUpCard currentStep="otp">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -98,11 +97,14 @@ const Otp = ({ onNext }) => {
               />
             ))}
           </div>
-          
-            <small className={`errorMessage ${Object.keys(errors).length > 0 ? "active" : ""}`}>
-             {Object.keys(errors).length > 0 ? "Please fill out all fields" : ""}
-            </small>
 
+          <small
+            className={`errorMessage ${
+              Object.keys(errors).length > 0 ? "active" : ""
+            }`}
+          >
+            {Object.keys(errors).length > 0 ? "Please fill out all fields" : ""}
+          </small>
 
           <small className="otpResendTimer">
             {resendVisible

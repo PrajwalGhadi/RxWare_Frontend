@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr />
+      {/* <hr /> */}
       <div className="footer-bottom-container">
         <p>© 2025 Rigelx. All rights reserved.</p>
       </div>

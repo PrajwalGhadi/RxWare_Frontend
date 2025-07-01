@@ -4,6 +4,7 @@ import SignUp from '../pages/auth/signup/SignUp'
 import SignIn from '../pages/auth/SignIn'
 import Landing from '../pages/landing/Landing'
 import ContactUs from '../pages/landing/ContactUs'
+import CreateSiteLoader from '../pages/loaders/CreateSiteLoader'
 
 const Routers = () => {
   return (
@@ -17,6 +18,8 @@ const Routers = () => {
             <Route path='/signup/otp' element = {<SignUp />}/>
             <Route path='/signup/details' element = {<SignUp />}/>
             <Route path='/signup/domain' element = {<SignUp />}/>
+
+            <Route path='/create-site' element={<CreateSiteLoader />}></Route>
         </Routes>
     </>
   )

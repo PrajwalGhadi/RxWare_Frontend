@@ -29,7 +29,7 @@ const Domain = ({ onNext }) => {
         </p>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="input-wrapper">
+        <div className="input-wrapper domain-input-wrapper">
           <label htmlFor="createSite" className="label">
             Site Name<span className="imp">*</span>
           </label>

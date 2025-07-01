@@ -60,8 +60,8 @@
   align-items: center;
 }
 .signUpPage .overlay .right-div .card {
-  width: 55%;
-  height: 30vw;
+  width: 60%;
+  height: 35vw;
   border: 4px solid;
   border-radius: 1vw;
   position: relative;
@@ -71,13 +71,12 @@
   align-items: center;
 }
 .signUpPage .overlay .right-div .card .circle {
-  width: 7vw;
-  height: 7vw;
+  width: 8vw;
+  height: 8vw;
   border: 1px solid;
   border-radius: 100%;
   position: absolute;
-  top: -13%;
-  left: 35%;
+  transform: translate(0%, -220%);
 }
 .signUpPage .overlay .right-div .card .circle img {
   -o-object-position: cover;
@@ -87,7 +86,7 @@
 }
 .signUpPage .overlay .right-div .card .details {
   width: 80%;
-  height: 22vw;
+  height: 26vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -164,6 +163,7 @@
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 1vw;
+  margin-top: 2vw;
 }
 .signUpPage .overlay .right-div .card .details form .input-wrapper .label, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label {
   margin-bottom: 0.5vw;
@@ -176,12 +176,24 @@
   align-items: center;
   justify-content: flex-start;
 }
-.signUpPage .overlay .right-div .card .details form .input-wrapper .label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label .imp {
+.signUpPage .overlay .right-div .card .details form .input-wrapper .label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .label .detail-pass-imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label .detail-pass-imp {
   color: red;
   position: absolute;
   right: 2%;
-  top: 35%;
+  top: 36%;
   z-index: 1;
+}
+.signUpPage .overlay .right-div .card .details form .input-wrapper .label .detail-pass-imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label .detail-pass-imp {
+  top: 18%;
+}
+.signUpPage .overlay .right-div .card .details form .input-wrapper .label.email-label, .signUpPage .overlay .right-div .card .details form .input-wrapper .email-label.otp-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1vw;
+}
+.signUpPage .overlay .right-div .card .details form .input-wrapper .label.email-label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .email-label.otp-label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .label.email-label .detail-pass-imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .email-label.otp-label .detail-pass-imp {
+  top: 40%;
 }
 .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label {
   justify-content: center;
@@ -219,10 +231,11 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 1vw;
   margin-bottom: 1vw;
 }
 .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-container .otp-input {
-  font-size: 1vw;
+  font-size: 0.75vw;
   width: 15%;
   padding: 0.75vw;
   border: 1px solid #ddd;
@@ -237,7 +250,7 @@
   box-shadow: 0 3px 2px #3aff16;
 }
 .signUpPage .overlay .right-div .card .details form .input-wrapper .input-field {
-  font-size: 0.75vw;
+  font-size: 0.8vw;
   width: 100%; /* Full width to fit the container */
   max-width: 100%; /* Ensure it doesn’t expand beyond its container */
   padding: 0.5vw 0.5vw;
@@ -253,6 +266,12 @@
   border-color: #3aff16;
   box-shadow: 0 0 5px #3aff16;
 }
+.signUpPage .overlay .right-div .card .details form .input-wrapper .input-field::-moz-placeholder {
+  font-style: italic;
+}
+.signUpPage .overlay .right-div .card .details form .input-wrapper .input-field::placeholder {
+  font-style: italic;
+}
 .signUpPage .overlay .right-div .card .details form .input-wrapper input::-ms-reveal,
 .signUpPage .overlay .right-div .card .details form .input-wrapper input::-ms-clear {
   display: none;
@@ -261,8 +280,20 @@
   position: absolute;
   z-index: 1;
   right: 5%;
-  top: 40%;
+  top: 20%;
   font-size: 1.25vw;
+}
+.signUpPage .overlay .right-div .card .details form .input-wrapper .validation-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  font-size: 0.85rem;
+}
+.signUpPage .overlay .right-div .card .details form .input-wrapper .validation-checklist .valid {
+  color: green;
+}
+.signUpPage .overlay .right-div .card .details form .input-wrapper .validation-checklist .invalid {
+  color: red;
 }
 .signUpPage .overlay .right-div .card .details form .input-wrapper .errorMessage {
   display: block;
@@ -272,11 +303,26 @@
   overflow-wrap: break-word; /* Break long words onto the next line */
   font-size: 0.75vw;
   color: red;
-  margin-top: -0.5vw;
+  margin-top: 0vw;
   visibility: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0.25vw;
 }
 .signUpPage .overlay .right-div .card .details form .input-wrapper .errorMessage.active {
   visibility: visible; /* Show when error is present */
+}
+.signUpPage .overlay .right-div .card .details form .input-wrapper.email-container {
+  margin-top: 15%;
+}
+.signUpPage .overlay .right-div .card .details form .input-wrapper.detail-input-wrapper {
+  margin-top: 0vw;
+}
+.signUpPage .overlay .right-div .card .details form .multi-inputs.detail-input-wrapper {
+  margin-top: 0vw;
+}
+.signUpPage .overlay .right-div .card .details form .input-wrapper.domain-input-wrapper {
+  margin-top: 0vw;
 }
 .signUpPage .overlay .right-div .card .details form .alignButton {
   width: 100%;
@@ -290,7 +336,7 @@
   font-size: 1vw;
   font-weight: 600;
   border: none;
-  border-radius: 0.25vw;
+  border-radius: 0.5vw;
   background-color: #3aff16;
   color: #001f3f;
   padding: 0.5vw 2vw;
@@ -306,6 +352,7 @@
   flex-direction: column;
   gap: 0.5vw;
   text-align: center;
+  margin-top: 2vw;
 }
 .signUpPage .overlay .right-div .card .details .page-details .domain-heading {
   font-size: 1vw;
@@ -318,6 +365,170 @@
   font-size: 0.65vw;
   font-style: italic;
   opacity: 0.8;
+}
+
+.csite-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #001f3f;
+  color: #fff;
+}
+.csite-container .csite-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 2rem;
+  font-weight: normal;
+  font-size: 30px;
+}
+.csite-container .csite-content .subtitle {
+  font-size: 25px;
+  margin-bottom: 1.2rem;
+}
+.csite-container .csite-content .progress-bar {
+  width: 600px;
+  height: 20px;
+  background: #fff;
+  border-radius: 13px;
+  overflow: hidden;
+  margin: 1rem 0 0.2rem 0;
+  border: 3px solid #fff;
+}
+.csite-container .csite-content .progress-fill {
+  height: 100%;
+  background-color: #3aff16;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+.csite-container .csite-content .progress-status-wrapper {
+  position: relative;
+  width: 600px;
+  margin-top: 0.4rem;
+}
+.csite-container .csite-content .progress-status {
+  font-size: 14px;
+  color: #fff;
+  text-align: right;
+}
+.csite-container .csite-content .completed-status-line {
+  position: absolute;
+  top: 18rem; /* move it closer to progress bar */
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  font-size: 30px;
+  gap: 6px;
+  margin-bottom: 10rem;
+}
+.csite-container .csite-content .tick-icon {
+  width: 30px;
+  height: 30px;
+}
+.csite-container .csite-content .small-note {
+  font-size: 16px;
+  color: #ddd;
+  margin-top: 0.5rem;
+}
+.csite-container .csite-content .slide-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.csite-container .csite-content .arrow {
+  font-size: 24px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 10px;
+}
+.csite-container .csite-content .slide-content {
+  text-align: center;
+  width: 380px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.csite-container .csite-content .slide-img {
+  width: 350px;
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.csite-container .csite-content .slide-caption {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.csite-container .csite-content .slide-text {
+  font-size: 28px;
+  color: #eee;
+  margin-top: 1rem;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+}
+.csite-container .csite-content .slide-subtext {
+  font-size: 20px;
+  color: #ccc;
+  margin-top: 0.3rem;
+  line-height: 1.4;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.csite-container .csite-content .dots {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  min-height: 20px;
+}
+.csite-container .csite-content .dot {
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.csite-container .csite-content .dot.active {
+  background-color: #3aff16;
+}
+.csite-container .csite-content .completed-caption {
+  margin-top: 1.2rem;
+  color: #fff;
+}
+.csite-container .csite-content .completed-heading {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.csite-container .csite-content .completed-subtext {
+  font-size: 20px;
+  color: #ffffff;
+  line-height: 1.5;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.csite-container .csite-content .redirecting {
+  font-size: 25px;
+  color: #ffffff;
+  margin-top: 1rem;
 }
 
 .navbar {
@@ -528,8 +739,9 @@
 footer {
   width: 100%;
   background-color: #001f3f;
+  border-top: 2px solid #3a526f;
   color: white;
-  padding: 1vw 0vw;
+  padding: 0vw 0vw;
 }
 footer .footer-top-container {
   width: 100%;
@@ -600,4 +812,5 @@ footer .footer-bottom-container {
   justify-content: center;
   align-items: center;
   padding: 1vw;
+  border-top: 2px solid #3a526f;
 }/*# sourceMappingURL=index.css.map */

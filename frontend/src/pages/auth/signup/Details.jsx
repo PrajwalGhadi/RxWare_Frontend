@@ -1,30 +1,30 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import SignUpCard from "../../../components/utils/signUpCard";
 import { useForm } from "react-hook-form";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import PasswordInput from "./PasswordInput";
+
+const details_input = [
+  {
+    labelName: "First Name",
+    labelClass: "label",
+    pattern: {
+      value: /^[a-zA-Z]{3,30}$/,
+      message: "First name must be 3-30 characters.",
+    },
+    requiredMessage: "First Name is required",
+  },
+
+  {
+    labelName: "Last Name",
+    labelClass: "label",
+    pattern: {
+      value: /^[a-zA-Z]{3,30}$/,
+      message: "Name must be 3-30 letters",
+    },
+  },
+];
 
 const Details = ({ onNext }) => {
-  const details_input = [
-    {
-      labelName: "First Name",
-      labelClass: "label",
-      pattern: {
-        value: /^[a-zA-Z]{3,30}$/,
-        message: "First name must be 3-30 characters.",
-      },
-      requiredMessage: "First Name is required",
-    },
-
-    {
-      labelName: "Last Name",
-      labelClass: "label",
-      pattern: {
-        value: /^[a-zA-Z]{3,30}$/,
-        message: "Name must be 3-30 letters",
-      },
-    },
-  ];
-
   const {
     register,
     handleSubmit,
@@ -32,22 +32,22 @@ const Details = ({ onNext }) => {
     reset,
   } = useForm();
 
-  const onSubmit = (data) => {
-    onNext(data, "details");
-    reset();
+  const [password, setPassword] = useState("");
+
+  const handlePasswordChange = (newPassword) => {
+    setPassword(newPassword);
   };
 
-  const [showPassword, setShowPassword] = useState(false);
-
-  function togglePassword() {
-    console.log("clicked on togglePassword");
-    setShowPassword((prevState) => !prevState);
-  }
-
+  const onSubmit = (data) => {
+    const updatedData = { ...data, password }; // Adding password to the data
+    onNext(updatedData, "details"); // Passing the updated data to the onNext function
+    reset();
+  };
+  
   return (
     <SignUpCard currentStep="details">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="multi-inputs">
+        <div className="multi-inputs detail-input-wrapper">
           {details_input.map((item, index) => {
             return (
               <div key={index} className="input-wrapper">
@@ -68,7 +68,9 @@ const Details = ({ onNext }) => {
 
                 {/* Error Handling */}
                 <small
-                  className={`errorMessage ${errors[item.labelName] ? "active" : ""}`}
+                  className={`errorMessage ${
+                    errors[item.labelName] ? "active" : ""
+                  }`}
                 >
                   {errors[item.labelName]?.message}
                 </small>
@@ -77,34 +79,7 @@ const Details = ({ onNext }) => {
           })}
         </div>
 
-        <div className="input-wrapper">
-          <label htmlFor="Password" className="label">
-            Password
-            <span className="imp">*</span>
-          </label>
-          <input
-            type={showPassword ? "text" : "password"}
-            className="input-field"
-            placeholder={`Enter your password`}
-            {...register(`password`, {
-              required: `Password is required`,
-              pattern: {
-                value:
-                  /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/,
-                message: "8+ chars, 1 uppercase, 1 number, 1 special char.",
-              },
-            })}
-          />
-
-          <span onClick={() => togglePassword()} id="eye-icon">
-            {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-          </span>
-
-          {/* Error Handling */}
-          <small className={`errorMessage ${errors.password ? "active" : ""}`}>
-            {errors.password?.message}
-          </small>
-        </div>
+        <PasswordInput onPasswordChange={handlePasswordChange} />
 
         <div className="alignButton">
           <button type="submit" className="button">
