@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
+import { BiSolidErrorCircle } from "react-icons/bi";
 
-const PasswordInput = ({ onPasswordChange }) => {
+const PasswordInput = ({ onPasswordChange, isPasswordValid }) => {
   const [password, setPassword] = useState("");
   const [passwordValidations, setPasswordValidations] = useState({
     length: false,
@@ -12,7 +13,7 @@ const PasswordInput = ({ onPasswordChange }) => {
     special: false,
   });
   const [showPassword, setShowPassword] = useState(false);
-  const [hasTyped, setHasTyped] = useState(false);  //newly added to handled the error message of password to keep password netural when it has not entered
+  const [hasTyped, setHasTyped] = useState(false); //newly added to handled the error message of password to keep password netural when it has not entered
 
   const togglePassword = () => setShowPassword(!showPassword);
 
@@ -41,7 +42,8 @@ const PasswordInput = ({ onPasswordChange }) => {
     setPasswordValidations(validations);
 
     // Passing data to parent component
-    onPasswordChange(password);
+    const isValid = Object.values(validations).every(Boolean); // use of this line because it prevent detail page to going ahead if password is not valid
+    onPasswordChange(password, isValid);
   };
 
   return (

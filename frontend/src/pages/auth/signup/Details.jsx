@@ -1,4 +1,4 @@
-import {useState } from "react";
+import { useState } from "react";
 import SignUpCard from "../../../components/utils/signUpCard";
 import { useForm } from "react-hook-form";
 import PasswordInput from "./PasswordInput";
@@ -34,17 +34,24 @@ const Details = ({ onNext }) => {
   } = useForm();
 
   const [password, setPassword] = useState("");
+  const [isPasswordValid, setIsPasswordValid] = useState(false);
 
-  const handlePasswordChange = (newPassword) => {
+  const handlePasswordChange = (newPassword, isValid) => {
     setPassword(newPassword);
+    setIsPasswordValid(isValid);
   };
 
   const onSubmit = (data) => {
+    if (!isPasswordValid) {
+      // alert("Please enter a valid password.");
+      return;
+    }
+
     const updatedData = { ...data, password }; // Adding password to the data
     onNext(updatedData, "details"); // Passing the updated data to the onNext function
     reset();
   };
-  
+
   return (
     <SignUpCard currentStep="details">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -73,7 +80,7 @@ const Details = ({ onNext }) => {
                     errors[item.labelName] ? "active" : ""
                   }`}
                 >
-                  <BiSolidErrorCircle  />
+                  <BiSolidErrorCircle />
                   {errors[item.labelName]?.message}
                 </small>
               </div>
@@ -81,7 +88,7 @@ const Details = ({ onNext }) => {
           })}
         </div>
 
-        <PasswordInput onPasswordChange={handlePasswordChange} />
+        <PasswordInput onPasswordChange={handlePasswordChange} isPasswordValid = {isPasswordValid}/>
 
         <div className="alignButton">
           <button type="submit" className="button">
