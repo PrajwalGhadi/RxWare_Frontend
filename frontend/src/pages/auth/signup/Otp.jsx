@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 const Otp = ({ onNext }) => {
   const [seconds, setSeconds] = useState(30);
   const [resendVisible, setResendVisible] = useState(false);
+  const [resendCounter, setResendCounter] = useState(0);  //Newly Added to count the resend button is clicked and how much
+
   const inputs = useRef([]);
 
   const {
@@ -60,6 +62,7 @@ const Otp = ({ onNext }) => {
     if (!resendVisible) return;
     setSeconds(30);
     setResendVisible(false);
+    setResendCounter(resendCounter + 1);  //Added to track the resend button is clicked and how many time it triggered
   };
 
   useEffect(() => {
@@ -125,21 +128,40 @@ const Otp = ({ onNext }) => {
             </button>
           </div>
 
-          <p className="otpResendLabel">
-            Haven't received the OTP?{" "}
+              {/* New logic added if resendCounter is clicked then we will only show the Resend Button */}
+          {resendCounter < 1 ? (
+            <p className="otpResendLabel">
+              Haven't received the OTP?{" "}
+              <span
+                onClick={handleResend}
+                style={{
+                  color: resendVisible ? "#1082ff" : "gray",
+                  cursor: resendVisible ? "pointer" : "not-allowed",
+                  // textDecoration: resendVisible ? "underline" : "none",
+                  textDecoration: "none",
+                  pointerEvents: resendVisible ? "auto" : "none",
+                }}
+              >
+                Resend Otp
+              </span>
+            </p>
+          ) : (
             <span
               onClick={handleResend}
-              style={{
-                color: resendVisible ? "#1082ff" : "gray",
-                cursor: resendVisible ? "pointer" : "not-allowed",
-                // textDecoration: resendVisible ? "underline" : "none",
-                textDecoration: "none",
-                pointerEvents: resendVisible ? "auto" : "none",
-              }}
+              className={`otpResendLabel ${resendVisible ? 'activeResendLabel' : 'inActiveResendLabel'}`}
+              // style={{
+              //   color: resendVisible ? "#1082ff" : "gray",
+              //   cursor: resendVisible ? "pointer" : "not-allowed",
+              //   // textDecoration: resendVisible ? "underline" : "none",
+              //   textDecoration: "none",
+              //   pointerEvents: resendVisible ? "auto" : "none",
+              //   textAlign: 'center',
+              //   fontSize: '1vw'
+              // }}
             >
               Resend Otp
             </span>
-          </p>
+          )}
         </div>
       </form>
     </SignUpCard>

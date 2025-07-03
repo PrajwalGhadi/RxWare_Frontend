@@ -2,6 +2,7 @@ import {useState } from "react";
 import SignUpCard from "../../../components/utils/signUpCard";
 import { useForm } from "react-hook-form";
 import PasswordInput from "./PasswordInput";
+import { BiSolidErrorCircle } from "react-icons/bi";
 
 const details_input = [
   {
@@ -72,6 +73,7 @@ const Details = ({ onNext }) => {
                     errors[item.labelName] ? "active" : ""
                   }`}
                 >
+                  <BiSolidErrorCircle  />
                   {errors[item.labelName]?.message}
                 </small>
               </div>

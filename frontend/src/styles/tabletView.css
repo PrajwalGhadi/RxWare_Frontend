@@ -10,18 +10,17 @@
   }
   .signUpPage .overlay .right-div .card {
     width: 80%;
-    height: 80vh;
+    height: 82vh;
     border-radius: 4vw;
   }
   .signUpPage .overlay .right-div .card .circle {
     width: 20vw;
     height: 20vw;
-    top: -11vw;
-    left: 37.5%;
+    transform: translate(0%, -41.5vh);
   }
   .signUpPage .overlay .right-div .card .details {
     width: 80%;
-    height: 68vh;
+    height: 70vh;
     padding: 2vw 0;
     gap: 3vw;
   }
@@ -46,17 +45,33 @@
   }
   .signUpPage .overlay .right-div .card .details form .multi-inputs {
     flex-direction: column;
-    margin-top: -3.5vw;
+    margin-bottom: -2vw;
+    gap: 0vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper {
+    margin-top: 1vw;
   }
   .signUpPage .overlay .right-div .card .details form .input-wrapper .label, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label {
     margin-bottom: 2vw;
     font-size: 3vw;
   }
-  .signUpPage .overlay .right-div .card .details form .input-wrapper .label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label .imp {
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .label .detail-pass-imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label .detail-pass-imp {
     top: 35%;
   }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .label .detail-pass-imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label .detail-pass-imp {
+    top: 22%;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .label.email-label, .signUpPage .overlay .right-div .card .details form .input-wrapper .email-label.otp-label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 3vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .label.email-label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .email-label.otp-label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .label.email-label .detail-pass-imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .email-label.otp-label .detail-pass-imp {
+    top: 40%;
+  }
   .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label {
-    font-size: 3vw;
+    font-size: 3.25vw;
   }
   .signUpPage .overlay .right-div .card .details form .input-wrapper .otpResendTimer {
     font-size: 3vw;
@@ -70,6 +85,24 @@
     font-size: 3.25vw;
     font-weight: 500;
   }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .otpResendLabel.activeResendLabel {
+    color: #1082ff;
+    cursor: pointer;
+    text-decoration: none;
+    pointer-events: auto;
+    text-align: center;
+    font-size: 4vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .otpResendLabel.inActiveResendLabel {
+    color: gray;
+    cursor: not-allowed;
+    pointer-events: none;
+    text-align: center;
+    font-size: 4vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-container {
+    gap: 3vw;
+  }
   .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-container .otp-input {
     padding: 2.5vw;
     border-radius: 1.5vw;
@@ -77,18 +110,30 @@
     font-size: 2.75vw;
   }
   .signUpPage .overlay .right-div .card .details form .input-wrapper .input-field {
-    font-size: 2.5vw;
-    padding: 2vw;
+    font-size: 2.75vw;
+    padding: 1vw;
     border-radius: 1vw;
   }
   .signUpPage .overlay .right-div .card .details form .input-wrapper #eye-icon {
-    top: 40%;
+    top: 25%;
     font-size: 3.75vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .validation-checklist {
+    font-size: 2vw;
   }
   .signUpPage .overlay .right-div .card .details form .input-wrapper .errorMessage {
     height: 2rem; /* Reserve space for the error message */
-    font-size: 2.5vw;
-    margin-top: 0.5vw;
+    font-size: 2.25vw;
+    margin-top: 0vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .multi-inputs.detail-input-wrapper {
+    margin-top: -4vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper.detail-input-wrapper {
+    margin-top: 1vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper.email-container {
+    margin-top: 5%;
   }
   .signUpPage .overlay .right-div .card .details form .alignButton {
     margin-top: 4.5vw;
@@ -114,6 +159,112 @@
   .signUpPage .overlay .right-div .card .details .page-details .domain-para2 {
     font-size: 2.25vw;
     scale: 1.1;
+  }
+  .csite-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  .csite-container .csite-content {
+    width: 100vw;
+    height: 100vh;
+    padding: 12vw 9vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+    font-size: initial;
+  }
+  .csite-container .csite-content h2 {
+    font-size: 5vw;
+  }
+  .csite-container .csite-content .subtitle {
+    font-size: 4vw;
+    margin-bottom: 1.2rem;
+  }
+  .csite-container .csite-content .progress {
+    width: 100%;
+  }
+  .csite-container .csite-content .progress .progress-bar {
+    width: 100%;
+  }
+  .csite-container .csite-content .progress .progress-status-wrapper {
+    width: 80vw;
+    margin-top: 1vw;
+  }
+  .csite-container .csite-content .progress .progress-status-wrapper .progress-status {
+    font-size: 3vw;
+  }
+  .csite-container .csite-content .small-note {
+    font-size: 3.5vw;
+  }
+  .csite-container .csite-content .completed-status-line {
+    font-size: 5vw;
+    gap: 2vw;
+    display: flex;
+    align-items: center;
+  }
+  .csite-container .csite-content .completed-status-line .tick-icon {
+    width: 5vw;
+    height: 5vw;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .image-slider {
+    width: 100%;
+    position: relative;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .image-slider .arrow {
+    font-size: 6vw;
+    padding: 0 0px;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .image-slider .left {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .image-slider .right {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .image-slider .slide-img {
+    width: 75%;
+    height: 75%;
+    margin-top: 0vw;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .slide-caption {
+    width: 100%;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .slide-caption .slide-text {
+    font-size: 5vw;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .slide-caption .slide-subtext {
+    width: 100%;
+    font-size: 3vw;
+  }
+  .csite-container .csite-content .completed-caption {
+    width: 100%;
+  }
+  .csite-container .csite-content .completed-caption .image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .csite-container .csite-content .completed-caption .image .completed-img {
+    width: 50%;
+    height: 50%;
+  }
+  .csite-container .csite-content .completed-caption .completed-heading {
+    font-size: 6vw;
+  }
+  .csite-container .csite-content .completed-caption .completed-subtext {
+    font-size: 3vw;
+    color: #ffffff;
+    line-height: 1.5;
+  }
+  .csite-container .csite-content .completed-caption .redirecting {
+    font-size: 4vw;
   }
   .navbar {
     width: 100%;

@@ -1,5 +1,6 @@
 @media (max-width: 767px) {
   body {
+    width: 100%;
     position: relative;
   }
 
@@ -17,21 +18,20 @@
         justify-content: center; //updated
 
         .card {
-          width: 80%; //updated
-          height: 75vh; //udpated
+          width: 95%; //updated
+          height: 85vh; //udpated
           border-radius: 4vw; //updated
 
           .circle {
             width: 26vw; //updated
             height: 26vw; //updated
 
-            top: -14.5vw; //adjusted
-            left: 34%; //adjusted
+            transform: translate(0%, -43vh);
           }
 
           .details {
             width: 80%; //updated
-            height: 55vh; //udpated
+            height: 70vh; //udpated
             padding: 0vw 0; //updated
 
             gap: 4vw; //updated
@@ -67,20 +67,38 @@
               .multi-inputs {
                 flex-direction: column; //updated
                 margin-top: -3.5vw; //updated for Adjustment purpose because form already has margin
+                gap: 0vw;
               }
 
               .input-wrapper {
+                margin-top: 1vw;
                 .label {
-                  margin-bottom: 3.75vw; //updated
+                  margin-bottom: 3vw; //updated
                   font-size: 4vw; //updated
                   .imp {
-                    top: 40%; //updated
+                    top: 35%; //updated
+                  }
+
+                  .detail-pass-imp {
+                    @extend .imp;
+                    top: 18%; //Adjusted to look similar
+                  }
+                }
+
+                .label.email-label {
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  margin-bottom: 3vw;
+
+                  .imp {
+                    top: 40%;
                   }
                 }
 
                 .otp-label {
                   @extend .label;
-                  font-size: 3vw; //adjusted
+                  font-size: 3.75vw; //adjusted
                 }
 
                 .otpResendTimer {
@@ -90,14 +108,33 @@
                 .otpResendLabel {
                   width: 100%; //newly added
                   margin: 6vw 0; //updated
-                  font-size: 3.5vw; //updated
+                  font-size: 4vw; //updated
 
                   span {
-                    font-size: 3.75vw; //updated
+                    font-size: 4vw; //updated
                   }
                 }
 
+                .otpResendLabel.activeResendLabel {
+                  color: #1082ff;
+                  cursor: pointer;
+                  // textDecoration: resendVisible ? "underline" : "none",
+                  text-decoration: none;
+                  pointer-events: auto;
+                  text-align: center;
+                  font-size: 5vw;
+                }
+
+                .otpResendLabel.inActiveResendLabel {
+                  color: gray;
+                  cursor: not-allowed;
+                  pointer-events: none;
+                  text-align: center;
+                  font-size: 5vw;
+                }
+
                 .otp-container {
+                  gap: 3vw;
                   .otp-input {
                     font-size: 3vw; //updated
                     padding: 2.5vw; //updated
@@ -108,20 +145,27 @@
 
                 .input-field {
                   font-size: 3.5vw; //updated
-                  padding: 1.5vw; //updated
+                  padding: 2vw; //updated
                   border-radius: 2vw; //updated
                 }
 
                 #eye-icon {
-                  top: 45%; //updated
+                  top: 22%; //updated
                   font-size: 5.25vw; //updated
                 }
 
+                .validation-checklist {
+                  font-size: 3vw;
+                }
                 .errorMessage {
                   height: 1rem; /* Reserve space for the error message */ //updated
                   font-size: 3.5vw; //updated
-                  margin-top: 0.5vw; //Adjusted to look better  //udpated
+                  margin-top: 1vw; //Adjusted to look better  //udpated
                 }
+              }
+
+              .multi-inputs.detail-input-wrapper {
+                margin-top: -2vw;
               }
 
               .alignButton {
@@ -139,20 +183,143 @@
               gap: 1vw; //udpated
               margin-top: 2vw; //updated
               .domain-heading {
-                font-size: 3.75vw; //update
+                font-size: 4vw; //update
                 margin-bottom: 1vw;
               }
 
               .domain-para1 {
-                font-size: 2.5vw; //udpated
+                font-size: 3vw; //udpated
                 scale: 1.1; //updated
               }
               .domain-para2 {
-                font-size: 2.25vw; //updated
+                font-size: 3vw; //updated
                 scale: 1.1; //updated
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  // Loader Screen
+  .csite-container {
+    width: 100vw; //updated
+    height: 100vh; //updated
+
+    .csite-content {
+      width: 100vw; //updated
+      padding: 25vw 8vw; //updated
+      text-align: center; //updated
+      display: flex; //updated
+      flex-direction: column; //updated
+      align-items: center; //newly added
+      justify-content: center; //newly added
+      gap: 4vw; //updated
+      font-size: initial; //updated
+      border: 1px solid;
+      h2 {
+        font-size: 7vw; //updated
+      }
+      .subtitle {
+        font-size: 5vw; //updated
+        margin-bottom: 1.2rem;
+      }
+
+      .progress {
+        width: 100%;
+        .progress-bar {
+          width: 100%; //updated
+        }
+
+        .progress-status-wrapper {
+          width: 100%; //uppdated
+          margin-top: 1vw; //updated
+
+          .progress-status {
+            font-size: 3vw;
+          }
+        }
+      }
+
+      .small-note {
+        font-size: 4.5vw; //updated
+      }
+      .completed-status-line {
+        font-size: 7vw; //updated
+        gap: 2vw; //updated
+        display: flex; //updated
+        align-items: center; //updated
+        .tick-icon {
+          width: 7vw;
+          height: 7vw;
+        }
+      }
+
+      .slide-wrapper {
+        .slide-content {
+          .image-slider {
+            position: relative;
+            .arrow {
+              font-size: 6vw; //updated
+              padding: 0 0px; //updated
+            }
+
+            .left {
+              position: absolute;
+              left: 5%;
+              top: 50%;
+            }
+
+            .right {
+              position: absolute;
+              right: 5%;
+              top: 50%;
+            }
+
+            .slide-img {
+              width: 70%;
+              height: 70%;
+              margin-top: 0vw; //updated
+            }
+          }
+
+          .slide-caption {
+            width: 100%;
+            .slide-text {
+              font-size: 5vw;
+            }
+          }
+        }
+      }
+
+      .completed-caption {
+        width: 100%;
+        .image {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .completed-img {
+            width: 70%;
+            height: 70%;
+          }
+        }
+
+        .completed-heading {
+          font-size: 6vw;
+        }
+
+        .completed-subtext {
+          width: 100%;
+          font-size: 3vw;
+          color: #ffffff;
+          line-height: 1.5;
+        }
+
+        .redirecting {
+          font-size: 6vw;
         }
       }
     }
@@ -269,8 +436,8 @@
       }
 
       p {
-        width: 80%; //updated
-        font-size: 3vw; //Updated
+        width: 100%; //updated
+        font-size: 4vw; //Updated
       }
 
       .buttons {

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Email from "./Email";
 import Otp from "./Otp";
@@ -7,6 +7,8 @@ import Domain from "./Domain";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [formData, setFormData] = useState({});
   const [currentStep, setCurrentStep] = useState("email");
 
@@ -27,10 +29,16 @@ const SignUp = () => {
   };
 
 useEffect(() => {
-  const currentPath = location.pathname.split("/").pop(); // Extract the last part of the URL
-  if (steps.includes(currentPath)) {
-    navigate("/signup/email"); // Redirect to the email step on reload
-  }
+  // Back button handler
+  const handleBackNavigation = () => {
+    window.location.href = "/signup/email";
+  };
+
+  window.addEventListener("popstate", handleBackNavigation);
+
+  return () => {
+    window.removeEventListener("popstate", handleBackNavigation);  //Reason for Remove Listener: To Avoid the memory leak as if user goes back or forth and eventlistener will get pileup
+  };
 }, []);
 
   return (

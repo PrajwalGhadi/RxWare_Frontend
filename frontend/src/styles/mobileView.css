@@ -1,5 +1,6 @@
 @media (max-width: 767px) {
   body {
+    width: 100%;
     position: relative;
   }
   .signUpPage .overlay .left-div {
@@ -12,19 +13,18 @@
     justify-content: center;
   }
   .signUpPage .overlay .right-div .card {
-    width: 80%;
-    height: 75vh;
+    width: 95%;
+    height: 85vh;
     border-radius: 4vw;
   }
   .signUpPage .overlay .right-div .card .circle {
     width: 26vw;
     height: 26vw;
-    top: -14.5vw;
-    left: 34%;
+    transform: translate(0%, -43vh);
   }
   .signUpPage .overlay .right-div .card .details {
     width: 80%;
-    height: 55vh;
+    height: 70vh;
     padding: 0vw 0;
     gap: 4vw;
   }
@@ -50,16 +50,32 @@
   .signUpPage .overlay .right-div .card .details form .multi-inputs {
     flex-direction: column;
     margin-top: -3.5vw;
+    gap: 0vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper {
+    margin-top: 1vw;
   }
   .signUpPage .overlay .right-div .card .details form .input-wrapper .label, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label {
-    margin-bottom: 3.75vw;
+    margin-bottom: 3vw;
     font-size: 4vw;
   }
-  .signUpPage .overlay .right-div .card .details form .input-wrapper .label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label .imp {
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .label .detail-pass-imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label .detail-pass-imp {
+    top: 35%;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .label .detail-pass-imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label .detail-pass-imp {
+    top: 18%;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .label.email-label, .signUpPage .overlay .right-div .card .details form .input-wrapper .email-label.otp-label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 3vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .label.email-label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .email-label.otp-label .imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .label.email-label .detail-pass-imp, .signUpPage .overlay .right-div .card .details form .input-wrapper .email-label.otp-label .detail-pass-imp {
     top: 40%;
   }
   .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label {
-    font-size: 3vw;
+    font-size: 3.75vw;
   }
   .signUpPage .overlay .right-div .card .details form .input-wrapper .otpResendTimer {
     font-size: 4vw;
@@ -67,10 +83,28 @@
   .signUpPage .overlay .right-div .card .details form .input-wrapper .otpResendLabel {
     width: 100%;
     margin: 6vw 0;
-    font-size: 3.5vw;
+    font-size: 4vw;
   }
   .signUpPage .overlay .right-div .card .details form .input-wrapper .otpResendLabel span {
-    font-size: 3.75vw;
+    font-size: 4vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .otpResendLabel.activeResendLabel {
+    color: #1082ff;
+    cursor: pointer;
+    text-decoration: none;
+    pointer-events: auto;
+    text-align: center;
+    font-size: 5vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .otpResendLabel.inActiveResendLabel {
+    color: gray;
+    cursor: not-allowed;
+    pointer-events: none;
+    text-align: center;
+    font-size: 5vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-container {
+    gap: 3vw;
   }
   .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-container .otp-input {
     font-size: 3vw;
@@ -80,17 +114,23 @@
   }
   .signUpPage .overlay .right-div .card .details form .input-wrapper .input-field {
     font-size: 3.5vw;
-    padding: 1.5vw;
+    padding: 2vw;
     border-radius: 2vw;
   }
   .signUpPage .overlay .right-div .card .details form .input-wrapper #eye-icon {
-    top: 45%;
+    top: 22%;
     font-size: 5.25vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .input-wrapper .validation-checklist {
+    font-size: 3vw;
   }
   .signUpPage .overlay .right-div .card .details form .input-wrapper .errorMessage {
     height: 1rem; /* Reserve space for the error message */
     font-size: 3.5vw;
-    margin-top: 0.5vw;
+    margin-top: 1vw;
+  }
+  .signUpPage .overlay .right-div .card .details form .multi-inputs.detail-input-wrapper {
+    margin-top: -2vw;
   }
   .signUpPage .overlay .right-div .card .details form .alignButton {
     margin-top: 3.5vw;
@@ -106,16 +146,118 @@
     margin-top: 2vw;
   }
   .signUpPage .overlay .right-div .card .details .page-details .domain-heading {
-    font-size: 3.75vw;
+    font-size: 4vw;
     margin-bottom: 1vw;
   }
   .signUpPage .overlay .right-div .card .details .page-details .domain-para1 {
-    font-size: 2.5vw;
+    font-size: 3vw;
     scale: 1.1;
   }
   .signUpPage .overlay .right-div .card .details .page-details .domain-para2 {
-    font-size: 2.25vw;
+    font-size: 3vw;
     scale: 1.1;
+  }
+  .csite-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  .csite-container .csite-content {
+    width: 100vw;
+    padding: 25vw 8vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+    font-size: initial;
+    border: 1px solid;
+  }
+  .csite-container .csite-content h2 {
+    font-size: 7vw;
+  }
+  .csite-container .csite-content .subtitle {
+    font-size: 5vw;
+    margin-bottom: 1.2rem;
+  }
+  .csite-container .csite-content .progress {
+    width: 100%;
+  }
+  .csite-container .csite-content .progress .progress-bar {
+    width: 100%;
+  }
+  .csite-container .csite-content .progress .progress-status-wrapper {
+    width: 100%;
+    margin-top: 1vw;
+  }
+  .csite-container .csite-content .progress .progress-status-wrapper .progress-status {
+    font-size: 3vw;
+  }
+  .csite-container .csite-content .small-note {
+    font-size: 4.5vw;
+  }
+  .csite-container .csite-content .completed-status-line {
+    font-size: 7vw;
+    gap: 2vw;
+    display: flex;
+    align-items: center;
+  }
+  .csite-container .csite-content .completed-status-line .tick-icon {
+    width: 7vw;
+    height: 7vw;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .image-slider {
+    position: relative;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .image-slider .arrow {
+    font-size: 6vw;
+    padding: 0 0px;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .image-slider .left {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .image-slider .right {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .image-slider .slide-img {
+    width: 70%;
+    height: 70%;
+    margin-top: 0vw;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .slide-caption {
+    width: 100%;
+  }
+  .csite-container .csite-content .slide-wrapper .slide-content .slide-caption .slide-text {
+    font-size: 5vw;
+  }
+  .csite-container .csite-content .completed-caption {
+    width: 100%;
+  }
+  .csite-container .csite-content .completed-caption .image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .csite-container .csite-content .completed-caption .image .completed-img {
+    width: 70%;
+    height: 70%;
+  }
+  .csite-container .csite-content .completed-caption .completed-heading {
+    font-size: 6vw;
+  }
+  .csite-container .csite-content .completed-caption .completed-subtext {
+    width: 100%;
+    font-size: 3vw;
+    color: #ffffff;
+    line-height: 1.5;
+  }
+  .csite-container .csite-content .completed-caption .redirecting {
+    font-size: 6vw;
   }
   .navbar .image {
     width: 20vw;
@@ -205,8 +347,8 @@
     font-weight: 500;
   }
   .slidingHeroSection .overlay p {
-    width: 80%;
-    font-size: 3vw;
+    width: 100%;
+    font-size: 4vw;
   }
   .slidingHeroSection .overlay .buttons {
     margin-top: 6vw;

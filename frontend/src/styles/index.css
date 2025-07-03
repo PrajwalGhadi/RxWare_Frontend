@@ -14,6 +14,12 @@
   font-family: "Lato";
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 .signUpPage {
   width: 100%;
   height: 100vh;
@@ -43,26 +49,27 @@
 }
 .signUpPage .overlay .left-div h1 {
   color: white;
-  font-size: 1.75vw;
+  font-size: 2vw;
 }
 .signUpPage .overlay .left-div h3 {
-  width: 40%;
+  width: 50%;
   color: white;
-  font-size: 1.25vw;
+  font-size: 1.75vw;
   font-weight: 100;
   text-align: center;
   margin-top: 2vw;
 }
 .signUpPage .overlay .right-div {
   width: 100%;
-  padding: 0 3vw;
+  padding: 4vw;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .signUpPage .overlay .right-div .card {
   width: 60%;
   height: 35vw;
-  border: 4px solid;
+  box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 12px, rgba(0, 0, 0, 0.5) -10px 10px 12px, rgba(0, 0, 0, 0.5) -10px -10px 12px;
   border-radius: 1vw;
   position: relative;
   background-color: white;
@@ -76,7 +83,7 @@
   border: 1px solid;
   border-radius: 100%;
   position: absolute;
-  transform: translate(0%, -220%);
+  transform: translate(0%, -37.5vh);
 }
 .signUpPage .overlay .right-div .card .circle img {
   -o-object-position: cover;
@@ -162,7 +169,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 1vw;
   margin-top: 2vw;
 }
 .signUpPage .overlay .right-div .card .details form .input-wrapper .label, .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-label {
@@ -229,18 +235,19 @@
 .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-container {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 1vw;
   margin-top: 1vw;
   margin-bottom: 1vw;
 }
 .signUpPage .overlay .right-div .card .details form .input-wrapper .otp-container .otp-input {
   font-size: 0.75vw;
-  width: 15%;
-  padding: 0.75vw;
+  width: 12%;
+  padding: 0.75vw 0.5vw;
   border: 1px solid #ddd;
   border-radius: 0.5vw;
-  box-shadow: 0px 5px 5px gray;
+  box-shadow: 0px 3px 2px gray;
   outline: none;
   transition: border-color 0.3s ease;
   text-align: center;
@@ -288,6 +295,9 @@
   padding: 0;
   margin: 10px 0;
   font-size: 0.85rem;
+}
+.signUpPage .overlay .right-div .card .details form .input-wrapper .validation-checklist .pending {
+  color: gray;
 }
 .signUpPage .overlay .right-div .card .details form .input-wrapper .validation-checklist .valid {
   color: green;
@@ -358,16 +368,17 @@
   font-size: 1vw;
 }
 .signUpPage .overlay .right-div .card .details .page-details .domain-para1 {
-  font-size: 0.75vw;
+  font-size: 0.8vw;
 }
 .signUpPage .overlay .right-div .card .details .page-details .domain-para2 {
   margin-top: -0.5vw;
-  font-size: 0.65vw;
+  font-size: 0.8vw;
   font-style: italic;
   opacity: 0.8;
 }
 
 .csite-container {
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -376,69 +387,85 @@
   color: #fff;
 }
 .csite-container .csite-content {
+  width: 100vw;
+  height: 100vh;
+  padding: 5vw 25vw;
   text-align: center;
-  max-width: 600px;
-  padding: 2rem;
-  font-weight: normal;
-  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vw;
+}
+.csite-container .csite-content h2 {
+  font-size: 2vw;
 }
 .csite-container .csite-content .subtitle {
-  font-size: 25px;
+  font-size: 1.5vw;
   margin-bottom: 1.2rem;
 }
-.csite-container .csite-content .progress-bar {
-  width: 600px;
+.csite-container .csite-content .progress {
+  width: 100%;
+}
+.csite-container .csite-content .progress .progress-bar {
+  width: 100%;
   height: 20px;
   background: #fff;
   border-radius: 13px;
   overflow: hidden;
-  margin: 1rem 0 0.2rem 0;
   border: 3px solid #fff;
 }
-.csite-container .csite-content .progress-fill {
+.csite-container .csite-content .progress .progress-fill {
   height: 100%;
   background-color: #3aff16;
   width: 0;
   transition: width 0.5s ease-in-out;
 }
-.csite-container .csite-content .progress-status-wrapper {
-  position: relative;
-  width: 600px;
-  margin-top: 0.4rem;
+.csite-container .csite-content .progress .progress-status-wrapper {
+  width: 100%;
+  margin-top: 0.5vw;
 }
-.csite-container .csite-content .progress-status {
-  font-size: 14px;
+.csite-container .csite-content .progress .progress-status {
+  font-size: 1vw;
   color: #fff;
   text-align: right;
 }
-.csite-container .csite-content .completed-status-line {
-  position: absolute;
-  top: 18rem; /* move it closer to progress bar */
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-flex;
-  align-items: center;
-  font-size: 30px;
-  gap: 6px;
-  margin-bottom: 10rem;
-}
-.csite-container .csite-content .tick-icon {
-  width: 30px;
-  height: 30px;
-}
 .csite-container .csite-content .small-note {
-  font-size: 16px;
+  font-size: 1.5vw;
   color: #ddd;
   margin-top: 0.5rem;
+}
+.csite-container .csite-content .completed-status-line {
+  display: flex;
+  align-items: center;
+  font-size: 1.5vw;
+  gap: 1vw;
+}
+.csite-container .csite-content .completed-status-line .tick-icon {
+  width: 1.5vw;
+  height: 1.5vw;
 }
 .csite-container .csite-content .slide-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
-  gap: 1rem;
+  width: 80%;
+  position: relative;
 }
-.csite-container .csite-content .arrow {
+.csite-container .csite-content .slide-wrapper .slide-content {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.csite-container .csite-content .slide-wrapper .slide-content .image-slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.csite-container .csite-content .slide-wrapper .slide-content .image-slider .arrow {
   font-size: 24px;
   color: #fff;
   background: none;
@@ -446,42 +473,38 @@
   cursor: pointer;
   padding: 0 10px;
 }
-.csite-container .csite-content .slide-content {
-  text-align: center;
-  width: 380px;
-  min-height: 360px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+.csite-container .csite-content .slide-wrapper .slide-content .image-slider .left {
+  position: absolute;
+  left: 5%;
+  top: 30%;
 }
-.csite-container .csite-content .slide-img {
-  width: 350px;
-  height: 200px;
-  -o-object-fit: contain;
-     object-fit: contain;
+.csite-container .csite-content .slide-wrapper .slide-content .image-slider .right {
+  position: absolute;
+  right: 5%;
+  top: 30%;
+}
+.csite-container .csite-content .slide-wrapper .slide-content .image-slider .slide-img {
+  width: 30%;
+  height: 30%;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
-  margin: 0 auto;
-  margin-top: 100px;
 }
-.csite-container .csite-content .slide-caption {
-  min-height: 100px;
+.csite-container .csite-content .slide-wrapper .slide-content .slide-caption {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.csite-container .csite-content .slide-text {
+.csite-container .csite-content .slide-wrapper .slide-content .slide-caption .slide-text {
   font-size: 28px;
   color: #eee;
-  margin-top: 1rem;
-  min-height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   white-space: nowrap;
 }
-.csite-container .csite-content .slide-subtext {
+.csite-container .csite-content .slide-wrapper .slide-content .slide-caption .slide-subtext {
   font-size: 20px;
   color: #ccc;
   margin-top: 0.3rem;
@@ -497,7 +520,7 @@
   gap: 10px;
   min-height: 20px;
 }
-.csite-container .csite-content .dot {
+.csite-container .csite-content .dots .dot {
   height: 12px;
   width: 12px;
   background-color: #bbb;
@@ -506,26 +529,35 @@
   transition: background-color 0.3s;
   cursor: pointer;
 }
-.csite-container .csite-content .dot.active {
+.csite-container .csite-content .dots .dot.active {
   background-color: #3aff16;
 }
 .csite-container .csite-content .completed-caption {
-  margin-top: 1.2rem;
   color: #fff;
 }
-.csite-container .csite-content .completed-heading {
+.csite-container .csite-content .completed-caption .image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.csite-container .csite-content .completed-caption .image .completed-img {
+  width: 30%;
+  height: 30%;
+}
+.csite-container .csite-content .completed-caption .completed-heading {
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
-.csite-container .csite-content .completed-subtext {
-  font-size: 20px;
+.csite-container .csite-content .completed-caption .completed-subtext {
+  font-size: 1vw;
   color: #ffffff;
   line-height: 1.5;
-  max-width: 1000px;
+  width: 75%;
   margin: 0 auto;
 }
-.csite-container .csite-content .redirecting {
+.csite-container .csite-content .completed-caption .redirecting {
   font-size: 25px;
   color: #ffffff;
   margin-top: 1rem;

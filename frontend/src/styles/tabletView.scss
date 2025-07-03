@@ -14,20 +14,19 @@
 
         .card {
           width: 80%; //updated
-          height: 80vh; //udpated
+          height: 82vh; //udpated
           border-radius: 4vw; //updated
 
           .circle {
             width: 20vw; //updated
             height: 20vw; //updated
 
-            top: -11vw; //adjusted
-            left: 37.5%; //adjusted
+            transform: translate(0%, -41.5vh);
           }
 
           .details {
             width: 80%; //updated
-            height: 68vh; //udpated
+            height: 70vh; //udpated
             padding: 2vw 0; //updated
 
             gap: 3vw; //updated
@@ -60,21 +59,40 @@
               margin-top: 4.5vw; //updated
               .multi-inputs {
                 flex-direction: column; //updated
-                margin-top: -3.5vw; //updated for Adjustment purpose because form already has margin
+                margin-bottom: -2vw;
+                gap: 0vw;
+                // border: 1px solid;
+                // margin-top: -3.5vw; //updated for Adjustment purpose because form already has margin
               }
 
               .input-wrapper {
+                margin-top: 1vw;
                 .label {
                   margin-bottom: 2vw; //updated
                   font-size: 3vw; //updated
                   .imp {
                     top: 35%; //updated
                   }
+                  .detail-pass-imp {
+                    @extend .imp;
+                    top: 22%;
+                  }
+                }
+
+                .label.email-label {
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  margin-bottom: 3vw;
+
+                  .imp {
+                    top: 40%;
+                  }
                 }
 
                 .otp-label {
                   @extend .label;
-                  font-size: 3vw; //adjusted
+                  font-size: 3.25vw; //adjusted
                 }
 
                 .otpResendTimer {
@@ -92,31 +110,65 @@
                   }
                 }
 
+                .otpResendLabel.activeResendLabel {
+                  color: #1082ff;
+                  cursor: pointer;
+                  // textDecoration: resendVisible ? "underline" : "none",
+                  text-decoration: none;
+                  pointer-events: auto;
+                  text-align: center;
+                  font-size: 4vw;
+                }
+
+                .otpResendLabel.inActiveResendLabel {
+                  color: gray;
+                  cursor: not-allowed;
+                  pointer-events: none;
+                  text-align: center;
+                  font-size: 4vw;
+                }
+
                 .otp-container {
+                  gap: 3vw;
                   .otp-input {
                     padding: 2.5vw; //updated
                     border-radius: 1.5vw; //updated
                     box-shadow: 0px 3px 2px gray; //updated
-                    font-size: 2.75vw;  //newly added for tabletview
+                    font-size: 2.75vw; //newly added for tabletview
                   }
                 }
 
                 .input-field {
-                  font-size: 2.5vw; //updated
-                  padding: 2vw; //updated
+                  font-size: 2.75vw; //updated
+                  padding: 1vw; //updated
                   border-radius: 1vw; //updated
                 }
 
                 #eye-icon {
-                  top: 40%; //updated
+                  top: 25%; //updated
                   font-size: 3.75vw; //updated
                 }
 
+                .validation-checklist {
+                  font-size: 2vw;
+                }
                 .errorMessage {
                   height: 2rem; /* Reserve space for the error message */ //updated
-                  font-size: 2.5vw; //updated
-                  margin-top: 0.5vw; //Adjusted to look better  //udpated
+                  font-size: 2.25vw; //updated
+                  margin-top: 0vw; //Adjusted to look better  //udpated
                 }
+              }
+
+              .multi-inputs.detail-input-wrapper {
+                margin-top: -4vw;
+              }
+
+              .input-wrapper.detail-input-wrapper {
+                margin-top: 1vw;
+              }
+
+              .input-wrapper.email-container {
+                margin-top: 5%;
               }
 
               .alignButton {
@@ -148,6 +200,136 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  // Loader Screen
+  .csite-container {
+    width: 100vw; //updated
+    height: 100vh; //updated
+
+    .csite-content {
+      width: 100vw; //updated
+      height: 100vh;
+      padding: 12vw 9vw; //updated
+      text-align: center; //updated
+      display: flex; //updated
+      flex-direction: column; //updated
+      align-items: center; //newly added
+      justify-content: center; //newly added
+      gap: 4vw; //updated
+      font-size: initial; //updated
+
+      h2 {
+        font-size: 5vw; //updated
+      }
+      .subtitle {
+        font-size: 4vw; //updated
+        margin-bottom: 1.2rem;
+      }
+
+      .progress {
+        width: 100%;
+        .progress-bar {
+          width: 100%; //updated
+        }
+
+        .progress-status-wrapper {
+          width: 80vw; //uppdated
+          margin-top: 1vw; //updated
+
+          .progress-status {
+            font-size: 3vw;
+          }
+        }
+      }
+
+      .small-note {
+        font-size: 3.5vw; //updated
+      }
+      .completed-status-line {
+        font-size: 5vw; //updated
+        gap: 2vw; //updated
+        display: flex; //updated
+        align-items: center; //updated
+
+        .tick-icon {
+          width: 5vw;
+          height: 5vw;
+        }
+      }
+
+      .slide-wrapper {
+        .slide-content {
+          .image-slider {
+            width: 100%;
+            position: relative;
+            .arrow {
+              font-size: 6vw; //updated
+              padding: 0 0px; //updated
+            }
+
+            .left {
+              position: absolute;
+              left: 5%;
+              top: 50%;
+            }
+
+            .right {
+              position: absolute;
+              right: 5%;
+              top: 50%;
+            }
+
+            .slide-img {
+              width: 75%;
+              height: 75%;
+              margin-top: 0vw; //updated
+            }
+          }
+
+          .slide-caption {
+            width: 100%;
+            .slide-text {
+              font-size: 5vw;
+            }
+
+            .slide-subtext {
+              width: 100%;
+              font-size: 3vw;
+            }
+          }
+        }
+      }
+
+      .completed-caption {
+        width: 100%;
+        .image {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .completed-img {
+            width: 50%;
+            height: 50%;
+          }
+        }
+
+        .completed-heading {
+          font-size: 6vw;
+        }
+
+        .completed-subtext {
+          font-size: 3vw;
+          color: #ffffff;
+          line-height: 1.5;
+        }
+
+        .redirecting {
+          font-size: 4vw;
         }
       }
     }

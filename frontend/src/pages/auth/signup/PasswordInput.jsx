@@ -2,7 +2,6 @@ import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
 
-
 const PasswordInput = ({ onPasswordChange }) => {
   const [password, setPassword] = useState("");
   const [passwordValidations, setPasswordValidations] = useState({
@@ -13,10 +12,14 @@ const PasswordInput = ({ onPasswordChange }) => {
     special: false,
   });
   const [showPassword, setShowPassword] = useState(false);
+  const [hasTyped, setHasTyped] = useState(false);  //newly added to handled the error message of password to keep password netural when it has not entered
 
   const togglePassword = () => setShowPassword(!showPassword);
 
   const handlePasswordChange = (password) => {
+    if (!hasTyped && password.length > 0) {
+      setHasTyped(true);
+    }
     setPassword(password);
 
     // Update validation statuses
@@ -60,20 +63,85 @@ const PasswordInput = ({ onPasswordChange }) => {
 
       {/* Validation Checklist */}
       <ul className="validation-checklist">
-        <li className={passwordValidations.length ? "valid" : "invalid"}>
-          {passwordValidations.length ? <AiOutlineCheckCircle />: <AiOutlineCloseCircle />}  Must be at least 8 characters long
+        <li
+          className={
+            !hasTyped
+              ? "pending"
+              : passwordValidations.length
+              ? "valid"
+              : "invalid"
+          }
+        >
+          {passwordValidations.length ? (
+            <AiOutlineCheckCircle />
+          ) : (
+            <AiOutlineCloseCircle />
+          )}{" "}
+          Must be at least 8 characters long
         </li>
-        <li className={passwordValidations.uppercase ? "valid" : "invalid"}>
-          {passwordValidations.uppercase ? <AiOutlineCheckCircle />: <AiOutlineCloseCircle />} Must contain at least one uppercase letter (A–Z)
+        <li
+          className={
+            !hasTyped
+              ? "pending"
+              : passwordValidations.uppercase
+              ? "valid"
+              : "invalid"
+          }
+        >
+          {passwordValidations.uppercase ? (
+            <AiOutlineCheckCircle />
+          ) : (
+            <AiOutlineCloseCircle />
+          )}{" "}
+          Must contain at least one uppercase letter (A–Z)
         </li>
-        <li className={passwordValidations.lowercase ? "valid" : "invalid"}>
-          {passwordValidations.lowercase ? <AiOutlineCheckCircle />: <AiOutlineCloseCircle />} Must contain at least one lowercase letter (a–z)
+        <li
+          className={
+            !hasTyped
+              ? "pending"
+              : passwordValidations.lowercase
+              ? "valid"
+              : "invalid"
+          }
+        >
+          {passwordValidations.lowercase ? (
+            <AiOutlineCheckCircle />
+          ) : (
+            <AiOutlineCloseCircle />
+          )}{" "}
+          Must contain at least one lowercase letter (a–z)
         </li>
-        <li className={passwordValidations.number ? "valid" : "invalid"}>
-         {passwordValidations.number ? <AiOutlineCheckCircle />: <AiOutlineCloseCircle />} Must include at least one number (0–9)
+        <li
+          className={
+            !hasTyped
+              ? "pending"
+              : passwordValidations.number
+              ? "valid"
+              : "invalid"
+          }
+        >
+          {passwordValidations.number ? (
+            <AiOutlineCheckCircle />
+          ) : (
+            <AiOutlineCloseCircle />
+          )}{" "}
+          Must include at least one number (0–9)
         </li>
-        <li className={passwordValidations.special ? "valid" : "invalid"}>
-         {passwordValidations.special ? <AiOutlineCheckCircle />: <AiOutlineCloseCircle />} Must include at least one special character (e.g. ! @ # $ % ^ & *)
+        <li
+          className={
+            !hasTyped
+              ? "pending"
+              : passwordValidations.special
+              ? "valid"
+              : "invalid"
+          }
+        >
+          {passwordValidations.special ? (
+            <AiOutlineCheckCircle />
+          ) : (
+            <AiOutlineCloseCircle />
+          )}{" "}
+          Must include at least one special character (e.g. ! @ # $ % ^ & *)
         </li>
       </ul>
     </div>

@@ -51,7 +51,7 @@ const Email = ({ onNext }) => {
           />
 
           <small className={`errorMessage ${errors.email ? "active" : ""}`}>
-            <BiSolidErrorCircle style={{ fontSize: "1vw" }} />
+            <BiSolidErrorCircle  />
             {errors.email?.message}
           </small>
         </div>
